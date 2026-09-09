@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Voice — 让校园里值得被看见的，被看见</title>
+<style>
+  :root{
+    --paper:#F7F2E9; --ink:#1A1512; --accent:#FF4D00; --yellow:#FFCE3E;
+    --green:#0E7A4A; --blue:#1D5FD6; --muted:#8A8177; --line:#D8CFC0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.6;
+  }
+  ::selection{background:var(--yellow);}
+
+  .proto-bar{
+    background:var(--ink); color:var(--paper); text-align:center;
+    font-size:12px; letter-spacing:.08em; padding:5px 12px;
+  }
+  .proto-bar b{color:var(--yellow);}
+
+  header{
+    position:sticky; top:0; z-index:50; background:var(--paper);
+    border-bottom:2px solid var(--ink);
+  }
+  .nav{
+    max-width:1080px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  }
+  .logo{display:flex; align-items:center; gap:10px; cursor:pointer; user-select:none;}
+  .logo-mark{
+    background:var(--ink); color:var(--yellow); font-weight:900;
+    font-family:Georgia,serif; font-style:italic;
+    padding:4px 10px; font-size:20px; letter-spacing:-.02em;
+    box-shadow:3px 3px 0 var(--accent);
+  }
+  .logo-text{font-weight:800; font-size:16px; line-height:1.2;}
+  .logo-text small{display:block; font-weight:500; color:var(--muted); font-size:11px; letter-spacing:.18em;}
+  nav.menu{display:flex; gap:4px; margin-left:auto; flex-wrap:wrap;}
+  nav.menu button{
+    border:1.5px solid var(--ink); background:transparent; color:var(--ink);
+    padding:6px 12px; font-size:14px; font-weight:700; cursor:pointer;
+    transition:all .12s; font-family:inherit; line-height:1.2;
+  }
+  nav.menu button small{display:block; font-size:9px; font-weight:600; letter-spacing:.1em; color:var(--muted); text-transform:uppercase;}
+  nav.menu button:hover{transform:translate(-1px,-1px); box-shadow:2px 2px 0 var(--ink);}
+  nav.menu button.on{background:var(--ink); color:var(--paper);}
+  nav.menu button.on small{color:var(--yellow);}
+  .cta-pill{
+    border:none; background:var(--accent); color:#fff; font-weight:800;
+    padding:8px 16px; font-size:14px; cursor:pointer;
+    box-shadow:3px 3px 0 var(--ink); transition:all .12s; font-family:inherit;
+  }
+  .cta-pill small{display:block; font-size:9px; font-weight:700; opacity:.85; letter-spacing:.06em;}
+  .cta-pill:hover{transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--ink);}
+
+  .page{display:none; max-width:1080px; margin:0 auto; padding:40px 24px 80px;}
+  .page.on{display:block; animation:fadein .25s ease;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12px; font-weight:800; letter-spacing:.22em; color:var(--muted);
+    border:1.5px solid var(--line); padding:4px 12px; background:#fff;
+    text-transform:uppercase;
+  }
+  .eyebrow .dot{width:8px;height:8px;background:var(--accent);display:inline-block;}
+
+  /* 双语副行 */
+  .en-s{display:block; font-size:12px; color:var(--muted); font-weight:500; line-height:1.55; margin-top:3px; letter-spacing:.01em;}
+  .en-s.tiny{font-size:10.5px;}
+
+  .hero{padding:40px 0 12px; border-bottom:2px solid var(--ink);}
+  .hero h1{
+    font-size:clamp(30px,5.4vw,58px); font-weight:900; line-height:1.15; letter-spacing:-.01em;
+  }
+  .hero h1 .en{
+    display:block; font-family:Georgia,serif; font-style:italic; font-weight:700;
+    font-size:clamp(18px,2.6vw,30px); color:var(--accent); letter-spacing:.02em; margin-top:6px;
+  }
+  .hl{background:linear-gradient(transparent 62%, var(--yellow) 62%, var(--yellow) 92%, transparent 92%);}
+  .hero-sub{margin-top:18px; font-size:16px; color:#4A423A; max-width:700px;}
+  .hero-tags{margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;}
+  .tag{
+    border:1.5px solid var(--ink); background:#fff; font-size:13px; font-weight:700;
+    padding:5px 12px; display:inline-flex; align-items:center; gap:6px; flex-direction:column; line-height:1.25;
+  }
+  .tag small{font-size:10px; font-weight:600; color:var(--muted); letter-spacing:.03em;}
+  .tag.y{background:var(--yellow);}
+  .tag.o{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .tag.o small{color:#FFD9C7;}
+  .tag.g{background:#DCF2E4; border-color:var(--green); color:var(--green);}
+  .tag.g small{color:var(--green); opacity:.8;}
+
+  .ticker{
+    margin:28px 0 8px; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);
+    overflow:hidden; background:#fff;
+  }
+  .ticker-inner{
+    display:inline-block; white-space:nowrap; padding:9px 0;
+    animation:tick 32s linear infinite; font-size:14px; font-weight:600;
+  }
+  .ticker:hover .ticker-inner{animation-play-state:paused;}
+  @keyframes tick{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+  .ticker .it{display:inline-block; margin-right:36px;}
+  .ticker .it b{color:var(--accent); margin-right:6px;}
+  .ticker .it em{font-style:normal; font-weight:500; color:var(--muted); font-size:12.5px; margin-left:4px;}
+
+  .pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin:34px 0 10px;}
+  .pillar{
+    border:2px solid var(--ink); background:#fff; padding:22px 20px;
+    box-shadow:5px 5px 0 rgba(26,21,18,.9); position:relative;
+  }
+  .pillar .num{
+    position:absolute; top:-14px; left:14px; background:var(--ink); color:var(--yellow);
+    font-family:Georgia,serif; font-style:italic; font-weight:700; padding:1px 10px; font-size:14px;
+  }
+  .pillar h3{font-size:19px; font-weight:800; margin:6px 0 8px;}
+  .pillar p{font-size:14px; color:#4A423A;}
+  .pillar .ex{display:inline-block; margin-top:12px; font-size:12px; font-weight:800; border-bottom:2px solid var(--yellow); padding-bottom:1px;}
+
+  .evi-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px;}
+  @media(max-width:760px){.evi-row{grid-template-columns:1fr;}}
+  .panel{border:2px solid var(--ink); background:#fff;}
+  .panel-h{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:var(--ink); color:var(--paper); padding:10px 16px; font-weight:800; font-size:14px;
+  }
+  .panel-h small{display:block; font-size:10px; font-weight:600; color:#C9BEB0; letter-spacing:.05em;}
+  .panel-h .more{border:1px solid var(--paper); color:var(--paper); font-size:12px; padding:2px 10px; cursor:pointer; background:none; font-family:inherit; font-weight:700; flex:none;}
+  .panel-h .more:hover{background:var(--paper); color:var(--ink);}
+  .panel-b{padding:16px;}
+  .rec-line{border-left:3px solid var(--line); padding:2px 0 2px 12px; margin-bottom:12px;}
+  .rec-line:last-child{margin-bottom:0;}
+  .rec-line .top{display:flex; gap:8px; align-items:center; flex-wrap:wrap;}
+  .rec-line .when{font-size:11px; color:var(--muted); font-weight:600;}
+  .rec-line .what{font-size:14px; font-weight:700; margin-top:2px;}
+  .rec-line .res{font-size:12.5px; color:#4A423A; margin-top:1px;}
+  .chip{
+    font-size:10.5px; font-weight:800; padding:1px 8px; border-radius:20px;
+    display:inline-flex; align-items:center; gap:4px; line-height:1.5;
+  }
+  .chip small{font-size:8.5px; font-weight:700; opacity:.8; letter-spacing:.04em;}
+  .chip.g{background:#DCF2E4; color:var(--green);}
+  .chip.b{background:#E2E9FA; color:var(--blue);}
+  .chip.a{background:#FBEBCB; color:#8a6400;}
+  .chip.n{background:#EFEAE2; color:var(--muted);}
+
+  .spot-mini{display:flex; gap:14px; align-items:center;}
+  .spot-art{
+    width:88px; height:88px; flex:none; border:2px solid var(--ink); background:var(--ink);
+    display:flex; align-items:center; justify-content:center; color:var(--yellow);
+    font-size:34px; box-shadow:3px 3px 0 var(--accent);
+  }
+  .spot-mini .who{font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.1em;}
+  .spot-mini .what{font-size:16px; font-weight:800; margin:2px 0;}
+  .spot-mini .say{font-size:13px; color:#4A423A;}
+
+  .band{
+    margin-top:40px; border:2px solid var(--ink); background:var(--ink); color:var(--paper);
+    padding:26px 24px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+    box-shadow:6px 6px 0 var(--accent);
+  }
+  .band h2{font-size:22px; font-weight:900;}
+  .band h2 small{display:block; font-family:Georgia,serif; font-style:italic; font-size:.62em; color:var(--accent);}
+  .band p{color:#C9BEB0; font-size:13.5px; max-width:560px;}
+  .band button{margin-left:auto; border:none; background:var(--yellow); color:var(--ink); font-weight:900; font-size:15px; padding:12px 22px; cursor:pointer; font-family:inherit; box-shadow:3px 3px 0 #fff;}
+  .band button small{display:block; font-size:9px; font-weight:700; opacity:.75;}
+  .band button:hover{transform:translate(-1px,-1px);}
+
+  .page-head{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:8px;}
+  .page-head h2{font-size:clamp(26px,4vw,40px); font-weight:900; line-height:1.1;}
+  .page-head h2 small{display:block; font-family:Georgia,serif; font-style:italic; color:var(--accent); font-size:.5em; font-weight:700;}
+  .page-intro{color:#4A423A; font-size:14.5px; max-width:720px; margin:10px 0 22px;}
+  .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;}
+  .filters button{
+    border:1.5px solid var(--ink); background:#fff; padding:5px 12px; cursor:pointer;
+    font-size:13px; font-weight:700; font-family:inherit; line-height:1.25;
+  }
+  .filters button small{display:block; font-size:9.5px; font-weight:600; color:var(--muted); letter-spacing:.04em;}
+  .filters button:hover{transform:translate(-1px,-1px); box-shadow:2px 2px 0 var(--ink);}
+  .filters button.on{background:var(--ink); color:var(--paper);}
+  .filters button.on small{color:var(--yellow);}
+
+  .rc-stats{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;}
+  .st-box{border:1.5px solid var(--ink); background:#fff; padding:5px 12px; font-size:12.5px; font-weight:700; display:flex; align-items:center; gap:7px; line-height:1.2;}
+  .st-box small{font-size:9px; font-weight:600; color:var(--muted); letter-spacing:.05em;}
+  .st-box b{font-size:16px; font-family:Georgia,serif;}
+  .st-dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
+  .st-box.total{background:var(--ink); color:#fff;}
+  .st-box.total .st-dot{background:var(--yellow);}
+  .st-box.total small{color:#C9BEB0;}
+
+  .rec-card{
+    border:2px solid var(--ink); background:#fff; margin-bottom:14px;
+    display:flex; overflow:hidden; transition:box-shadow .12s;
+  }
+  .rec-card:hover{box-shadow:4px 4px 0 rgba(26,21,18,.85); transform:translate(-1px,-1px);}
+  .rc-bar{width:8px; flex:none;}
+  .rc-main{flex:1; padding:14px 18px 14px; min-width:0;}
+  .rc-top{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .rc-cat{font-size:11px; font-weight:800; background:var(--paper); border:1px solid var(--line); padding:2px 8px; color:#5A5248; line-height:1.3;}
+  .rc-cat small{display:block; font-size:8.5px; font-weight:600; color:var(--muted); letter-spacing:.05em;}
+  .rc-when{font-size:11px; color:var(--muted); font-weight:600;}
+  .rc-id{font-family:Georgia,serif; font-style:italic; font-weight:700; color:var(--muted); font-size:11.5px;}
+  .rc-chip{margin-left:auto; font-size:11px; font-weight:900; padding:3px 10px; letter-spacing:.05em; text-align:center; line-height:1.25;}
+  .rc-chip small{display:block; font-size:8px; font-weight:800; letter-spacing:.08em; opacity:.8;}
+  .rc-q{margin:12px 0 0; padding-left:12px; border-left:3px solid var(--line);}
+  .rc-a{margin:8px 0 0 12px; padding:8px 12px; background:#F5F0E5; border:1px dashed var(--line); font-size:13.5px; color:#3E3730;}
+  .rc-q .lbl, .rc-a .lbl{display:flex; align-items:baseline; gap:8px; font-size:10px; font-weight:900; letter-spacing:.18em; color:var(--muted); margin-bottom:1px;}
+  .rc-q .lbl small, .rc-a .lbl small{font-size:8.5px; letter-spacing:.06em; font-weight:600; opacity:.85;}
+  .rc-q .txt{font-size:15.5px; font-weight:800; line-height:1.45;}
+  .rc-q .txt .en-s, .rc-a .en-s{font-size:12px; font-weight:500;}
+  .empty{text-align:center; color:var(--muted); padding:50px 0; font-size:15px;}
+
+  .spotlight{
+    border:2px solid var(--ink); background:var(--ink); color:var(--paper);
+    display:grid; grid-template-columns:minmax(220px,320px) 1fr; margin-bottom:30px;
+    box-shadow:6px 6px 0 var(--accent);
+  }
+  @media(max-width:760px){.spotlight{grid-template-columns:1fr;}}
+  .spot-img{
+    min-height:220px; background:repeating-linear-gradient(45deg,#262019,#262019 12px,#33291F 12px,#33291F 24px);
+    display:flex; align-items:center; justify-content:center; font-size:64px; border-right:2px solid var(--paper);
+  }
+  .spot-txt{padding:24px 26px;}
+  .spot-txt .lbl{color:var(--yellow); font-weight:900; letter-spacing:.2em; font-size:12px;}
+  .spot-txt h3{font-size:26px; font-weight:900; margin:6px 0 2px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+  .spot-txt h3 .cn{color:var(--accent);}
+  .spot-txt p{color:#D6CCBE; font-size:14.5px; margin-top:8px; max-width:640px;}
+  .spot-txt .en-s{color:#9E9181;}
+  .spot-txt .ach{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
+  .achv{border:1px solid var(--paper); color:var(--paper); font-size:12px; font-weight:700; padding:3px 10px; text-align:center; line-height:1.3;}
+  .achv small{display:block; font-size:8.5px; font-weight:600; color:#B7AA99; letter-spacing:.04em;}
+  .club-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px;}
+  .club{
+    border:2px solid var(--ink); background:#fff; padding:18px 16px; position:relative;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .club:hover{transform:translate(-2px,-2px); box-shadow:4px 4px 0 rgba(26,21,18,.9);}
+  .club .ico{font-size:28px; line-height:1;}
+  .club h4{font-size:17px; font-weight:800; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .club h4 .en{font-size:12px; color:var(--muted); font-weight:600; font-style:italic; font-family:Georgia,serif;}
+  .club .one{font-size:13px; color:#4A423A; flex:1;}
+  .club .en-s{font-size:11.5px;}
+  .club .foot{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:6px; border-top:1.5px dashed var(--line); padding-top:8px; flex-wrap:wrap;}
+  .club .foot .who{font-size:12px; color:var(--muted); font-weight:600;}
+  .club .foot .who small{display:block; font-size:9.5px; font-weight:500;}
+  .sticker{
+    position:absolute; top:-10px; right:-8px; background:var(--yellow); border:1.5px solid var(--ink);
+    font-size:11px; font-weight:900; padding:2px 10px; transform:rotate(3deg); box-shadow:2px 2px 0 var(--ink); line-height:1.3;
+  }
+  .sticker small{display:block; font-size:8px; font-weight:800; letter-spacing:.06em; opacity:.8;}
+  .sticker.o{background:var(--accent); color:#fff;}
+
+  .fb-cols{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:18px 0 30px;}
+  @media(max-width:760px){.fb-cols{grid-template-columns:1fr;}}
+  .fb-card{border:2px solid var(--ink); background:#fff; padding:24px 22px; position:relative;}
+  .fb-card.soon{border-style:dashed; background:transparent; box-shadow:none;}
+  .fb-card h3{font-size:20px; font-weight:900; margin-bottom:6px;}
+  .fb-card .mail{
+    display:inline-block; background:var(--yellow); font-weight:800; font-size:15px;
+    padding:6px 14px; border:1.5px solid var(--ink); margin:10px 0; box-shadow:2px 2px 0 var(--ink);
+  }
+  .fb-card p{font-size:13.5px; color:#4A423A;}
+  .fb-card ul{font-size:13.5px; color:#4A423A; padding-left:18px; margin-top:8px;}
+  .fb-card ul li{margin-bottom:6px;}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:20px 0 8px;}
+  @media(max-width:760px){.steps{grid-template-columns:1fr;}}
+  .step{border-top:3px solid var(--ink); padding-top:12px;}
+  .step .n{font-family:Georgia,serif; font-style:italic; font-weight:900; color:var(--accent); font-size:26px; line-height:1;}
+  .step b{display:block; font-size:15px; margin:4px 0 4px;}
+  .step b small{font-size:10px; font-weight:700; color:var(--muted); letter-spacing:.06em;}
+  .step span{font-size:13px; color:#4A423A;}
+  .step .en-s{font-size:11.5px;}
+  .notice{
+    border:1.5px dashed var(--muted); padding:14px 16px; font-size:13px; color:#4A423A;
+    background:#fff; margin-top:24px;
+  }
+  .notice b{color:var(--ink);}
+
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:26px; margin-top:8px;}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid h3{font-size:18px; font-weight:900; margin:22px 0 8px; display:flex; align-items:center; gap:8px;}
+  .about-grid h3:first-child{margin-top:0;}
+  .about-grid p{font-size:14.5px; color:#3E3730;}
+  .about-grid p.en-s{font-size:12px; margin:-4px 0 0;}
+  .about-grid .lead{font-size:17px; font-weight:600;}
+  .rel-box{border:2px solid var(--ink); background:#fff; padding:18px; margin-top:14px;}
+  .rel-box .rt{font-weight:900; font-size:15px; margin-bottom:6px;}
+  .rel-box .pair{display:flex; gap:12px; padding:8px 0; border-bottom:1.5px dashed var(--line); align-items:baseline;}
+  .rel-box .pair:last-child{border-bottom:none;}
+  .rel-box .pair .who{flex:none; font-weight:900; font-size:13px;}
+  .rel-box .pair .desc{font-size:13.5px;}
+  .rel-box .pair .desc small{display:block; font-size:10.5px; color:var(--muted); font-weight:500;}
+  .rel-box .who.sc{color:var(--blue);}
+  .rel-box .who.ov{color:var(--accent);}
+  .join-box{
+    margin-top:30px; border:2px solid var(--ink); background:var(--yellow);
+    padding:24px; box-shadow:6px 6px 0 var(--ink); text-align:center;
+  }
+  .join-box h3{font-size:24px; font-weight:900;}
+  .join-box p{font-size:14px; margin:8px 0 16px; color:#3E3729;}
+  .join-box .en-s{color:#6B5F45;}
+  .join-box button{border:2px solid var(--ink); background:var(--ink); color:var(--yellow); font-weight:900; font-size:15px; padding:12px 26px; cursor:pointer; font-family:inherit;}
+  .join-box button small{display:block; font-size:9px; font-weight:700; color:#C9BEB0; letter-spacing:.05em;}
+  .join-box button:hover{background:var(--accent); color:#fff;}
+
+  footer{
+    border-top:2px solid var(--ink); background:#fff; padding:26px 24px 34px; text-align:center;
+  }
+  footer .slogan{font-family:Georgia,serif; font-style:italic; font-size:18px; font-weight:700;}
+  footer .sub{font-size:12.5px; color:var(--muted); margin-top:6px; letter-spacing:.05em;}
+</style>
+</head>
+<body>
+
+<div class="proto-bar">🧪 <b>原型演示 v0.2</b> — 全站中英双语 · 内容为示例/历史整理，尚未上线 / Prototype — bilingual demo, not live yet</div>
+
+<header>
+  <div class="nav">
+    <div class="logo" onclick="go('home')">
+      <div class="logo-mark">OV</div>
+      <div class="logo-text">Our Voice<small>STUDENT-RUN · 学生运营</small></div>
+    </div>
+    <nav class="menu">
+      <button id="m-home" class="on" onclick="go('home')">首页<small>Home</small></button>
+      <button id="m-receipts" onclick="go('receipts')">回执墙<small>Receipts</small></button>
+      <button id="m-clubs" onclick="go('clubs')">社团成果<small>Clubs</small></button>
+      <button id="m-feedback" onclick="go('feedback')">我要反馈<small>Feedback</small></button>
+      <button id="m-about" onclick="go('about')">关于 OV<small>About</small></button>
+    </nav>
+    <button class="cta-pill" onclick="go('feedback')">📮 说点什么<small>Say something</small></button>
+  </div>
+</header>
+
+<!-- ============ 首页 ============ -->
+<section class="page on" id="view-home">
+  <div class="hero">
+    <h1>让校园里值得被看见的，<span class="hl">被看见</span><span class="en">Make what deserves to be seen, seen.</span></h1>
+    <p class="hero-sub">Our Voice 是一个由学生自己发起、自己运营的组织——一半是校园"广告公司"（帮社团、活动与成果做传播），一半是独立反馈渠道（把你的声音带到学校，并把结果公开给你）。
+    <span class="en-s">Our Voice is a student-run organization — part campus "ad agency" (telling the stories of clubs, events and achievements), part independent feedback channel (bringing your voice to the school and publishing what happens next).</span></p>
+    <div class="hero-tags">
+      <span class="tag">📬 学生反馈 · 公开回执<small>Feedback · Public receipts</small></span>
+      <span class="tag y">📰 每周校园周报<small>Weekly digest</small></span>
+      <span class="tag o">⭐ 社团成果 spotlight<small>Club showcase</small></span>
+      <span class="tag g">🗂 社团地图<small>Club map</small></span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner" id="tickerA"></div>
+    <div class="ticker-inner" id="tickerB" style="display:none;"></div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar"><span class="num">01</span>
+      <h3>📬 声音 Voice</h3>
+      <p>把同学们的真实想法带到学校面前，并持续跟进。每一条反馈都有去向，结果公开在回执墙。
+      <span class="en-s">We bring students' real opinions to the school and keep following up. Every piece of feedback has a trail; outcomes are published on the Receipt Wall.</span></p>
+      <span class="ex">不问，就没人替你问<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">No one will ask for you — unless you do.</small></span>
+    </div>
+    <div class="pillar"><span class="num">02</span>
+      <h3>📰 信息 Info</h3>
+      <p>每周校园周报：社团消息、找人组队、本周亮点——让消息找到人，也让人找到人。
+      <span class="en-s">A weekly digest: club news, team-ups, highlights — helping information find people, and people find people.</span></p>
+      <span class="ex">不办活动 · 让活动找到人<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">We do not run events — we help events find people.</small></span>
+    </div>
+    <div class="pillar"><span class="num">03</span>
+      <h3>⭐ 认可 Recognition</h3>
+      <p>社团的成果值得被全校看见。每周一个 spotlight，期末一份成果特辑——记录这个社区厉害的地方。
+      <span class="en-s">Clubs' work deserves to be seen by the whole school: a weekly spotlight, a term-end showcase — a record of what this community does well.</span></p>
+      <span class="ex">活动会散场 · 成果留下来<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">Events end; achievements remain.</small></span>
+    </div>
+  </div>
+
+  <div class="evi-row">
+    <div class="panel">
+      <div class="panel-h">🟢 最近解决的事<small>Recently resolved</small> <button class="more" onclick="go('receipts')">全部回执 / All →</button></div>
+      <div class="panel-b" id="homeReceipts"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-h">⭐ 本周 Spotlight<small>This week</small> <button class="more" onclick="go('clubs')">成果墙 / Showcase →</button></div>
+      <div class="panel-b" id="homeSpot"></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div>
+      <h2>有一件事想说？<small>Something on your mind?</small></h2>
+      <p>课程、食堂、作息、设备……大小事都算。告诉我们，我们带去学校，再把结果公开给你——全程看得见。</p>
+    </div>
+    <button onclick="go('feedback')">去反馈 →<small>Give feedback</small></button>
+  </div>
+</section>
+
+<!-- ============ 回执墙 ============ -->
+<section class="page" id="view-receipts">
+  <div class="page-head">
+    <h2>回执墙<small>THE RECEIPT WALL</small></h2>
+  </div>
+  <p class="page-intro">每一条反馈的处理结果都会公开在这里：收到了什么 → 带去了哪里 → 结果如何。你说了什么，后来怎么样了，都看得见。人名与细节已隐去。
+  <span class="en-s">Every outcome is published here: what we received → where we took it → what happened. What you said, and what came of it — all visible. Names and details removed.</span></p>
+  <div class="filters" id="filters"></div>
+  <div class="rc-stats" id="rcStats"></div>
+  <div id="receiptList"></div>
+  <p class="empty" id="receiptEmpty" style="display:none;">这个分类暂时没有记录——也许下一个就是你的。<br><span class="en-s" style="display:inline-block;">Nothing here yet — maybe yours will be next.</span></p>
+</section>
+
+<!-- ============ 社团成果 ============ -->
+<section class="page" id="view-clubs">
+  <div class="page-head">
+    <h2>社团成果<small>CLUB SHOWCASE</small></h2>
+  </div>
+  <p class="page-intro">每个社团都有自己的高光时刻。每周一个 spotlight，轮流来，人人有份——学期末汇总成一份成果特辑。
+  <span class="en-s">Every club deserves a moment in the light. One spotlight per week, taking turns — collected into a showcase at the end of the term.</span></p>
+  <div class="spotlight" id="spotMain"></div>
+  <div class="club-grid" id="clubGrid"></div>
+</section>
+
+<!-- ============ 我要反馈 ============ -->
+<section class="page" id="view-feedback">
+  <div class="page-head">
+    <h2>我要反馈<small>SPEAK UP</small></h2>
+  </div>
+  <div class="fb-cols">
+    <div class="fb-card">
+      <span class="tag" style="position:absolute;top:-12px;left:14px;">当前可用<small>Available now</small></span>
+      <h3>📮 发邮件给我们<small style="display:block;font-size:12px;color:var(--muted);font-weight:600;">Email us</small></h3>
+      <span class="mail">ourvoice@hd.kaiwenacademy</span>
+      <p>把想说的写进邮件。我们每周统一整理、带去学校，结果写进回执墙。
+      <span class="en-s">Write to us. We sort everything weekly, take it to the school, and publish the outcome on the Receipt Wall.</span></p>
+      <ul>
+        <li>大小事都算：课程、食堂、作息、设备、社团……<br><span class="en-s tiny" style="font-size:11px;">Big or small: classes, dining, schedules, facilities, clubs.</span></li>
+        <li>涉及具体个人时，我们会先征求你的同意再公开<span class="en-s tiny" style="font-size:11px;">If it involves a specific person, we ask before publishing.</span></li>
+      </ul>
+    </div>
+    <div class="fb-card soon">
+      <span class="tag n" style="position:absolute;top:-12px;left:14px;">建设中<small>Coming soon</small></span>
+      <h3>🔒 匿名渠道<small style="display:block;font-size:12px;color:var(--muted);font-weight:600;">Anonymous channel</small></h3>
+      <p style="margin-top:8px;">我们正在寻找更好的匿名提建议的方式（目前邮件渠道非匿名，发件人可见）。确定之后会第一时间在这里公布——<b>不想露面的朋友，可以先等等我们。</b>
+      <span class="en-s">We are working on a better, anonymous way to submit feedback (email is not anonymous — senders are visible). When it is ready, we will announce it here. If you prefer to stay anonymous, please wait for us.</span></p>
+    </div>
+  </div>
+  <div class="eyebrow" style="margin-bottom:2px;"><span class="dot"></span>提交之后会发生什么 / WHAT HAPPENS NEXT</div>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><b>收到<small>RECEIVED</small></b><span>你的反馈进入台账，每周统一整理分类<span class="en-s">Logged and sorted weekly.</span></span></div>
+    <div class="step"><div class="n">02</div><b>带去<small>BROUGHT</small></b><span>共性问题统一反映给学校相关部门，持续跟进<span class="en-s">Common issues raised with the school, tracked.</span></span></div>
+    <div class="step"><div class="n">03</div><b>回执<small>RECEIPT</small></b><span>结果公开在回执墙，无结果就写"仍在沟通"——不装死<span class="en-s">Outcomes published; if nothing yet, we say so honestly.</span></span></div>
+  </div>
+  <div class="notice">📌 <b>承诺 / Our promise：</b>我们不会假装解决。学校没回复就是没回复，我们会如实写"仍在沟通"，直到有下文。
+  <span class="en-s">We will not fake a resolution. If the school has not replied, we write exactly that — until there is news.</span></div>
+</section>
+
+<!-- ============ 关于 ============ -->
+<section class="page" id="view-about">
+  <div class="page-head">
+    <h2>关于 Our Voice<small>ABOUT</small></h2>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p class="lead">一个由学生自己发起、自己运营的组织。你可以把我们理解成校园里的"广告公司"——但我们服务的客户，是整个学生社区。
+      <span class="en-s">A student-run organization. Think of us as the campus "ad agency" — except our client is the whole student community.</span></p>
+      <h3>🎯 我们做什么 / What we do</h3>
+      <p>不办活动（那是学生会和社团的事）。我们做三件事：把学生的声音带到学校并公开结果（反馈线）；让社团、活动与成果被全校看见（传播线）；让消息找到人、人找到人（连接）。
+      <span class="en-s">We do not run events (that is for the Student Council and clubs). We do three things: bring student voices to the school and publish outcomes (feedback); make clubs, events and achievements visible school-wide (media); help information find people, and people find people (connection).</span></p>
+      <h3>🏛 和学生会的关系 / Student Council</h3>
+      <p>学生会是策展方——他们办活动、给资源；我们是做传播的——让活动找到人、让成果被记住。两件事不重叠，经常合作。
+      <span class="en-s">The Student Council curates — they run events and provide resources. We spread the word — helping events find people and achievements get remembered. No overlap; frequent collaboration.</span></p>
+      <h3>🕰 我们做过什么 / Our record</h3>
+      <p>办过 Leadership Face-to-Face 论坛（2025.12，学生直接对话校领导）、组织过全校性问题汇总反馈，也推动了一批切实的校园改变——从教室投影、报告厅座椅，到卫生间改造与无障碍卫生间重新开放。全部记录在<a href="#" onclick="go('receipts');return false;" style="color:var(--accent);font-weight:700;">回执墙 / the Receipt Wall</a>。
+      <span class="en-s">We ran the Leadership Face-to-Face Forum (Dec 2025 — students face-to-face with school leaders), organized school-wide issue reports, and helped push real campus changes: from projectors and lecture-hall seats to restroom renovations and the reopening of the accessible restroom. All recorded on the Receipt Wall.</span></p>
+    </div>
+    <div>
+      <div class="rel-box">
+        <div class="rt">一张图看懂分工 / WHO DOES WHAT</div>
+        <div class="pair"><span class="who sc">SC</span><span class="desc">策展：办活动 · 给资源 · 提供展示机会<small>Curates: events, resources, showcase opportunities</small></span></div>
+        <div class="pair"><span class="who ov">OV</span><span class="desc">传播：周报 · spotlight · 成果特辑 · 回执<small>Spreads the word: digest, spotlight, showcase, receipts</small></span></div>
+      </div>
+      <div class="join-box">
+        <h3>想加入我们？<br><span style="font-size:15px;font-style:italic;font-family:Georgia,serif;">Want to join?</span></h3>
+        <p>不需要经验，会听别人说话就够了。尤其欢迎 G9 / G10——OV 的未来是你们的。
+        <span class="en-s">No experience needed — if you can listen, that is enough. G9 and G10 especially welcome: the future of OV is yours.</span></p>
+        <button onclick="go('feedback')">📮 发邮件说"我想加入"<small>Email us to join</small></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="slogan">Make what deserves to be seen, seen.</div>
+  <div class="sub">OUR VOICE · 由学生运营 / STUDENT-RUN · 反馈与传播 / FEEDBACK &amp; MEDIA<br>ourvoice@hd.kaiwenacademy</div>
+</footer>
+
+<script>
+/* ============ 数据（正式版替换这里 / EDIT DATA HERE） ============ */
+const STATUS_EN = {"已解决":"RESOLVED","有回复":"REPLIED","已反映":"REPORTED","待反映":"PENDING"};
+
+const CATS = [
+  {c:"全部", e:"All"},
+  {c:"食堂", e:"Dining"},
+  {c:"设施设备", e:"Facilities"},
+  {c:"作息", e:"Schedule"},
+  {c:"课程教学", e:"Academics"},
+  {c:"社团活动", e:"Clubs"},
+  {c:"其他", e:"Other"}
+];
+
+const RECEIPTS = [
+  {id:"OV-2025-023", when:"2025.12", cat:"设施设备", q:"校园问题汇总：网络差、宿舍浴室供暖偏冷等", qEn:"School-wide issues: weak Wi-Fi, cold dorm showers, and more.", a:"IT 与后勤逐项书面回复：网络检测优化、暖气测温与通风管理、热风幕机方案评估中。", aEn:"IT and Operations replied item by item: network checked, heating measured, solutions under review.", st:"已解决"},
+  {id:"OV-2025-013", when:"2025.06", cat:"设施设备", q:"无障碍卫生间长期未开放，轮椅同学使用不便", qEn:"The accessible restroom stayed closed — hard for students using wheelchairs.", a:"后勤恢复其使用功能，并完成扶手与防滑地面检修。", aEn:"Operations reopened it and serviced the rails and flooring.", st:"已解决"},
+  {id:"OV-2025-015", when:"2025.06", cat:"设施设备", q:"体育馆二楼闷热、地面打滑", qEn:"Gym 2F felt stuffy and the floor was slippery.", a:"空调经检修正常，建议课前提前开启；保洁增加打扫频率。", aEn:"AC checked and fine — now started earlier; floor cleaning stepped up.", st:"有回复"},
+  {id:"OV-2025-010", when:"2025.04", cat:"课程教学", q:"Game Design 课程给分标准不透明", qEn:"Game Design grading felt unfair and unclear.", a:"学部与老师沟通改进：明确给分标注、严格迟交扣分、课堂说明规则。", aEn:"The division worked out fixes: clearer rubrics, stricter late policy, rules explained in class.", st:"已解决"},
+  {id:"OV-2025-008", when:"2025.03", cat:"其他", q:"体育课 Jersey 异味问题", qEn:"PE jerseys smelled bad.", a:"PE 老师认可建议，安排下学期起统一清洗处理。", aEn:"The PE teacher agreed — a cleaning plan starts next semester.", st:"有回复"},
+  {id:"OV-2025-006", when:"2025.03", cat:"设施设备", q:"一楼大厅卫生间附近异味", qEn:"Bad smell near the lobby restroom.", a:"后勤完成卫生间局部改造，新增排风系统将异味排出室外。", aEn:"Operations renovated the restroom with a new exhaust system — smell gone.", st:"已解决"},
+  {id:"OV-2025-004", when:"2025.02", cat:"食堂", q:"食堂晚餐价格问题", qEn:"Concerns about dinner pricing.", a:"后勤邀请反馈同学当面沟通（H207B），学校表示将有重要更新。", aEn:"Operations invited students to talk face-to-face; the school says updates are coming.", st:"有回复"},
+  {id:"OV-2025-003", when:"2025.02", cat:"设施设备", q:"Lecture Hall 座椅摇晃、三层饮水机故障", qEn:"Wobbly lecture-hall seats and a broken water dispenser.", a:"维修完成，恢复正常使用。", aEn:"Both fixed and back in use.", st:"已解决"},
+  {id:"OV-2025-002", when:"2025.02", cat:"设施设备", q:"H218 投影仪无法正常显示", qEn:"The H218 projector would not display properly.", a:"IT 查明为线材误接废弃插口，已改正。", aEn:"IT found the cable in a dead port and fixed it.", st:"已解决"},
+  {id:"OV-2025-024", when:"2025 春", cat:"设施设备", q:"教学楼设备报修渠道不便", qEn:"No easy way to report broken facilities.", a:"线上报修系统（设施通 App）正式投入使用，报修可追踪。", aEn:"The online reporting system (FONE) went live — repairs are now trackable.", st:"已解决"}
+];
+
+const CLUBS = [
+  {name:"摄影社", en:"Photography", ico:"📷", one:"拍校园活动、定期出片，正在筹备学期影展。", oneEn:"Covers campus events, publishes regularly, planning a term exhibition.", ach:[["🎞 学期影展筹备中","Term exhibition in the works"],["📸 为 5+ 场校内活动供图","Shot for 5+ school events"],["👥 招新开放","Recruiting"]], tag:true, leader:"G11 · 小A"},
+  {name:"戏剧社", en:"Drama", ico:"🎭", one:"每年一部完整制作——从排练到演出全流程。", oneEn:"One full production every year — rehearsal to stage.", ach:[], tag:false, leader:"G11 · 小B"},
+  {name:"辩论社", en:"Debate", ico:"🗣", one:"打校际赛，有稳定的训练和参赛节奏。", oneEn:"Competes in inter-school tournaments.", ach:[], tag:false, leader:"G12 · 小C"},
+  {name:"机器人社", en:"Robotics", ico:"🤖", one:"备赛 FTC，工程笔记和代码都在持续更新。", oneEn:"Preparing for FTC; engineering log and code kept current.", ach:[], tag:false, leader:"G10 · 小D"},
+  {name:"舞蹈社", en:"Dance", ico:"💃", one:"多舞种，校内演出经验丰富。", oneEn:"Multiple styles, experienced on campus stages.", ach:[], tag:false, leader:"G10 · 小E"},
+  {name:"读书社", en:"Reading", ico:"📚", one:"每两周一次共读，讨论向、无压力。", oneEn:"A low-pressure discussion circle every two weeks.", ach:[], tag:false, leader:"G11 · 小F"}
+];
+
+const TICKER = [
+  ["✅ 10+ 条反馈已公开回执","10+ feedback items published on the wall"],
+  ["⭐ 本周 spotlight：摄影社","This week: Photography Club"],
+  ["📮 新反馈每周五统一处理","New feedback sorted every Friday"],
+  ["📰 周报第 2 期 · 周日发送","Digest #2 — out on Sunday"],
+  ["🤝 学生会 × OV：社团展示计划筹备中","SC × OV: club showcase in the works"],
+  ["🗂 社团地图已收录 20+ 社团","20+ clubs on the map"]
+];
+
+/* ============ 渲染 ============ */
+function el(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function stMeta(st){
+  if(st==="已解决") return {bar:"#0E7A4A", bg:"#DCF2E4", fg:"#0E7A4A", dot:"#0E7A4A"};
+  if(st==="有回复") return {bar:"#1D5FD6", bg:"#E2E9FA", fg:"#1D5FD6", dot:"#1D5FD6"};
+  if(st==="已反映") return {bar:"#B7791F", bg:"#FBEBCB", fg:"#8A6400", dot:"#B7791F"};
+  return {bar:"#8A8177", bg:"#EFEAE2", fg:"#8A8177", dot:"#8A8177"};
+}
+function chip(st){
+  const m=stMeta(st);
+  return '<span class="chip" style="background:'+m.bg+';color:'+m.fg+'">● '+st+' <small>'+STATUS_EN[st]+'</small></span>';
+}
+
+function go(name){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("on"));
+  el("view-"+name).classList.add("on");
+  document.querySelectorAll("nav.menu button").forEach(b=>b.classList.remove("on"));
+  el("m-"+name).classList.add("on");
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(name==="receipts") renderReceipts(curCat);
+}
+
+let curCat="全部";
+function renderFilters(){
+  el("filters").innerHTML=CATS.map(x=>'<button class="'+(x.c===curCat?"on":"")+'" onclick="setCat(\''+x.c+'\')">'+x.c+'<small>'+x.e+'</small></button>').join("");
+}
+function setCat(c){curCat=c;renderFilters();renderReceipts(c);}
+function renderReceipts(cat){
+  const list=RECEIPTS.filter(r=>cat==="全部"||r.cat===cat);
+  el("receiptEmpty").style.display=list.length?"none":"block";
+  const order=["已解决","有回复","已反映","待反映"];
+  const cnt={}; list.forEach(r=>{cnt[r.st]=(cnt[r.st]||0)+1;});
+  let stats='<div class="st-box total"><span class="st-dot"></span>共 <b>'+list.length+'</b> 条<small>TOTAL</small></div>';
+  order.forEach(st=>{ if(cnt[st]){ const m=stMeta(st); stats+='<div class="st-box"><span class="st-dot" style="background:'+m.dot+'"></span><b>'+cnt[st]+'</b> '+st+'<small>'+STATUS_EN[st]+'</small></div>'; }});
+  el("rcStats").innerHTML=stats;
+  el("receiptList").innerHTML=list.map(r=>{
+    const m=stMeta(r.st), ce=CATS.find(x=>x.c===r.cat);
+    return '<div class="rec-card"><div class="rc-bar" style="background:'+m.bar+'"></div>'+
+    '<div class="rc-main"><div class="rc-top">'+
+    '<span class="rc-cat">'+r.cat+'<small>'+ce.e+'</small></span><span class="rc-when">'+r.when+'</span><span class="rc-id">'+r.id+'</span>'+
+    '<span class="rc-chip" style="background:'+m.bg+';color:'+m.fg+'">'+r.st+'<small>'+STATUS_EN[r.st]+'</small></span></div>'+
+    '<div class="rc-q"><span class="lbl">反馈 <small>FEEDBACK</small></span><div class="txt">'+r.q+'<span class="en-s">'+r.qEn+'</span></div></div>'+
+    '<div class="rc-a"><span class="lbl">结果 / 进展 <small>OUTCOME / UPDATE</small></span>'+r.a+'<span class="en-s">'+r.aEn+'</span></div>'+
+    '</div></div>';
+  }).join("");
+}
+
+function renderHome(){
+  const done=RECEIPTS.filter(r=>r.st==="已解决").slice(0,2);
+  el("homeReceipts").innerHTML=done.map(r=>
+    '<div class="rec-line"><div class="top"><span class="when">'+r.when+'</span>'+chip(r.st)+'</div>'+
+    '<div class="what">'+r.cat+' · '+r.q+'</div><div class="res">'+r.a+'<span class="en-s">'+r.aEn+'</span></div></div>'
+  ).join("")||'<div style="color:#8A8177;font-size:13px;">还没有记录——第一个会是你吗？</div>';
+  const s=CLUBS[0];
+  el("homeSpot").innerHTML='<div class="spot-mini"><div class="spot-art">'+s.ico+'</div>'+
+    '<div><div class="who">WEEKLY SPOTLIGHT</div><div class="what">'+s.name+' · '+s.en+'</div>'+
+    '<div class="say">'+s.one+'<span class="en-s">'+s.oneEn+'</span></div></div></div>';
+}
+
+function renderClubs(){
+  const s=CLUBS[0];
+  const ach=(s.ach||[]).map(a=>'<span class="achv">'+a[0]+'<small>'+a[1]+'</small></span>').join("");
+  el("spotMain").innerHTML='<div class="spot-img">'+s.ico+'</div><div class="spot-txt">'+
+    '<div class="lbl">⭐ 本周 SPOTLIGHT — '+s.name+'</div>'+
+    '<h3>'+s.en+' <span class="cn">'+s.name+'</span></h3>'+
+    '<p>'+s.one+'<span class="en-s">'+s.oneEn+'</span></p>'+
+    (ach?'<div class="ach">'+ach+'</div>':'')+'</div>';
+  el("clubGrid").innerHTML=CLUBS.map((c,i)=>'<div class="club">'+
+    (c.tag?'<span class="sticker o">本周 Spotlight<small>THIS WEEK</small></span>':'')+
+    '<div class="ico">'+c.ico+'</div><h4>'+c.name+' <span class="en">'+c.en+'</span></h4>'+
+    '<div class="one">'+c.one+'<span class="en-s">'+c.oneEn+'</span></div>'+
+    '<div class="foot"><span class="who">'+(i===0?"本周 spotlight 主角":"等一个 spotlight")+'<small>'+(i===0?"This week's star":"Waiting for their turn")+'</small></span><span class="who">'+c.leader+'</span></div></div>'
+  ).join("");
+}
+
+function renderTicker(){
+  const items=TICKER.map(t=>'<span class="it"><b>'+t[0]+'</b><em>'+t[1]+'</em></span>').join("");
+  const a=el("tickerA"), b=el("tickerB");
+  const block=items+items;
+  a.innerHTML=block; b.innerHTML=block;
+}
+
+renderTicker(); renderFilters(); renderReceipts("全部"); renderHome(); renderClubs();
+</script>
+</body>
+</html>
