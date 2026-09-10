@@ -316,6 +316,60 @@
   }
   footer .slogan{font-family:Georgia,serif; font-style:italic; font-size:18px; font-weight:700;}
   footer .sub{font-size:12.5px; color:var(--muted); margin-top:6px; letter-spacing:.05em;}
+
+  /* ---- 社团合作页 / FOR CLUBS ---- */
+  .mp-bar{
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    border:2px solid var(--ink); background:var(--ink); color:var(--paper);
+    padding:16px 20px; margin:0 0 28px; box-shadow:6px 6px 0 var(--accent);
+  }
+  .mp-bar .mp-ico{font-size:34px; line-height:1;}
+  .mp-bar b{font-size:19px; font-weight:900; display:block;}
+  .mp-bar .en-s{color:#9E9181; font-size:12px;}
+  .mp-bar button{
+    margin-left:auto; border:2px solid var(--yellow); background:var(--yellow); color:var(--ink);
+    font-weight:900; font-size:14px; padding:10px 20px; cursor:pointer; font-family:inherit;
+  }
+  .mp-bar button:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .mini-note{font-size:12.5px; color:var(--muted); margin:-4px 0 14px;}
+  .req-list{border:2px solid var(--ink); background:#fff; margin-bottom:32px;}
+  .req{display:grid; grid-template-columns:86px 1fr auto; gap:14px; align-items:start;
+       padding:13px 16px; border-bottom:1.5px dashed var(--line);}
+  .req:last-child{border-bottom:none;}
+  .req .when{font-family:Georgia,serif; font-style:italic; font-weight:700; font-size:13px; color:var(--accent);}
+  .req .what b{font-size:15.5px; font-weight:800; display:block; line-height:1.4;}
+  .req .what b small{font-size:10.5px; font-weight:700; color:var(--muted); letter-spacing:.05em; margin-left:6px;}
+  .req .what span{font-size:13px; color:#4A423A;}
+  .req .what .en-s{display:block; font-size:11.5px;}
+  .req .act{font-size:11px; font-weight:900; padding:4px 9px; text-align:center; line-height:1.3; white-space:nowrap;
+            border:1.5px solid var(--ink); background:var(--paper); color:#5A5248;}
+  .req .act small{display:block; font-size:8.5px; font-weight:700; opacity:.85; letter-spacing:.05em;}
+  .req .act.on{background:#DCF2E4; color:#0E7A4A; border-color:#0E7A4A;}
+  .req .act.soon{background:#FBEBCB; color:#8A6400; border-color:#B7791F;}
+  .req .act.ask{background:#E2E9FA; color:#1D5FD6; border-color:#1D5FD6;}
+  @media(max-width:760px){ .req{grid-template-columns:1fr; gap:6px;} .req .act{justify-self:start;} }
+  .svc-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px; margin-bottom:32px;}
+  .svc{border:2px solid var(--ink); background:#fff; padding:16px; display:flex; flex-direction:column; gap:6px;}
+  .svc:hover{transform:translate(-2px,-2px); box-shadow:4px 4px 0 rgba(26,21,18,.9);}
+  .svc .ico{font-size:26px; line-height:1;}
+  .svc h4{font-size:16.5px; font-weight:900;}
+  .svc h4 small{display:block; font-size:10.5px; color:var(--muted); font-weight:700; letter-spacing:.05em;}
+  .svc p{font-size:13px; color:#4A423A; flex:1;}
+  .svc .mt{font-size:10.5px; font-weight:900; letter-spacing:.05em; padding:3px 8px; align-self:flex-start;
+           border:1.5px solid var(--ink); background:var(--paper); color:#5A5248;}
+  .svc .mt.on{background:#DCF2E4; color:#0E7A4A; border-color:#0E7A4A;}
+  .svc .mt.soon{background:#FBEBCB; color:#8A6400; border-color:#B7791F;}
+  .svc .mt.ask{background:#E2E9FA; color:#1D5FD6; border-color:#1D5FD6;}
+  .samp-wrap{position:relative; margin:6px 0 30px;}
+  .samp-wrap .spotlight{margin-bottom:0;}
+  .samp-tag{position:absolute; top:-11px; left:16px; z-index:2; background:var(--yellow);
+            border:1.5px solid var(--ink); font-size:11px; font-weight:900; padding:2px 10px;}
+  .honest{border:2px solid var(--ink); background:#FFF9E8; padding:20px 22px; margin-top:8px;
+          box-shadow:5px 5px 0 rgba(26,21,18,.18);}
+  .honest h3{font-size:18px; font-weight:900; margin-bottom:10px;}
+  .honest p{font-size:14px; color:#3E3730;}
+  .honest p+p{margin-top:9px;}
+  .honest .en-s{display:block; font-size:12px; margin-top:2px;}
 </style>
 </head>
 <body>
@@ -331,7 +385,7 @@
     <nav class="menu">
       <button id="m-home" class="on" onclick="go('home')">首页<small>Home</small></button>
       <button id="m-receipts" onclick="go('receipts')">回执墙<small>Receipts</small></button>
-      <button id="m-clubs" onclick="go('clubs')">社团成果<small>Clubs</small></button>
+      <button id="m-clubs" onclick="go('clubs')">社团合作<small>For clubs</small></button>
       <button id="m-feedback" onclick="go('feedback')">我要反馈<small>Feedback</small></button>
       <button id="m-about" onclick="go('about')">关于 OV<small>About</small></button>
     </nav>
@@ -348,8 +402,8 @@
     <div class="hero-tags">
       <span class="tag">📬 学生反馈 · 公开回执<small>Feedback · Public receipts</small></span>
       <span class="tag y">📰 每周校园周报<small>Weekly digest</small></span>
-      <span class="tag o">⭐ 社团成果 spotlight<small>Club showcase</small></span>
-      <span class="tag g">🗂 社团地图<small>Club map</small></span>
+      <span class="tag o">⭐ 社团 spotlight<small>Club spotlight</small></span>
+      <span class="tag g">📣 社团合作 · 帮你被看见<small>For clubs</small></span>
     </div>
   </div>
 
@@ -372,9 +426,9 @@
       <span class="ex">不办活动 · 让活动找到人<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">We do not run events — we help events find people.</small></span>
     </div>
     <div class="pillar"><span class="num">03</span>
-      <h3>⭐ 认可 Recognition</h3>
-      <p>社团的成果值得被全校看见。每周一个 spotlight，期末一份成果特辑——记录这个社区厉害的地方。
-      <span class="en-s">Clubs' work deserves to be seen by the whole school: a weekly spotlight, a term-end showcase — a record of what this community does well.</span></p>
+      <h3>📣 传播 Megaphone</h3>
+      <p>社团负责把事情办出来，我们负责让全校知道。每周一个 spotlight、期末一份成果特辑——栏目这学期刚起步，正在排期，先来先排。
+      <span class="en-s">Clubs make things happen; we make sure the school hears about it. A weekly spotlight and a term-end showcase — the section just started this term; slots are being scheduled, first come first served.</span></p>
       <span class="ex">活动会散场 · 成果留下来<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">Events end; achievements remain.</small></span>
     </div>
   </div>
@@ -385,7 +439,7 @@
       <div class="panel-b" id="homeReceipts"></div>
     </div>
     <div class="panel">
-      <div class="panel-h">⭐ 本周 Spotlight<small>This week</small> <button class="more" onclick="go('clubs')">成果墙 / Showcase →</button></div>
+      <div class="panel-h">📣 社团合作<small>For clubs</small> <button class="more" onclick="go('clubs')">给社团 / For clubs →</button></div>
       <div class="panel-b" id="homeSpot"></div>
     </div>
   </div>
@@ -412,15 +466,48 @@
   <p class="empty" id="receiptEmpty" style="display:none;">这个分类暂时没有记录——也许下一个就是你的。<br><span class="en-s" style="display:inline-block;">Nothing here yet — maybe yours will be next.</span></p>
 </section>
 
-<!-- ============ 社团成果 ============ -->
+<!-- ============ 社团合作 ============ -->
 <section class="page" id="view-clubs">
   <div class="page-head">
-    <h2>社团成果<small>CLUB SHOWCASE</small></h2>
+    <h2>社团合作<small>FOR CLUBS</small></h2>
   </div>
-  <p class="page-intro">每个社团都有自己的高光时刻。每周一个 spotlight，轮流来，人人有份——学期末汇总成一份成果特辑。
-  <span class="en-s">Every club deserves a moment in the light. One spotlight per week, taking turns — collected into a showcase at the end of the term.</span></p>
-  <div class="spotlight" id="spotMain"></div>
-  <div class="club-grid" id="clubGrid"></div>
+  <p class="page-intro">我们不是社团的评委，是社团的喇叭。你们埋头做事，我们负责让全校听见。
+  <span class="en-s">We are not the judges of your club — we are your megaphone. You do the work; we make sure the school hears it.</span></p>
+
+  <div class="mp-bar">
+    <span class="mp-ico">📣</span>
+    <div><b>你们办，我们喊。</b><span class="en-s">You make it happen. We make it heard.</span></div>
+    <button onclick="go('feedback')">投稿合作 →</button>
+  </div>
+
+  <div class="eyebrow"><span class="dot"></span>他们来找过我们 / WHO CAME TO US</div>
+  <p class="mini-note">以下全部是真实来信，来自 ourvoice 邮箱存档——只保留社团与项目名，人名已隐去。<span class="en-s">Real requests from the Our Voice inbox archive; club and project names only, personal names removed.</span></p>
+  <div class="req-list" id="reqList"></div>
+
+  <div class="eyebrow"><span class="dot"></span>我们能给社团什么 / WHAT YOU GET</div>
+  <div class="svc-grid" id="svcGrid"></div>
+
+  <div class="eyebrow"><span class="dot"></span>怎么把东西交给我们 / HOW TO SEND IT</div>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><b>写信<small>SEND</small></b><span>标题写【社团宣传】+ 社团名，发到 ourvoice@hd.kaiwenacademy<span class="en-s">Subject line: [Club promo] + your club's name.</span></span></div>
+    <div class="step"><div class="n">02</div><b>给料<small>MATERIAL</small></b><span>时间、地点、一句话介绍，有海报就附上——没有也行，我们帮你写<span class="en-s">Time, place, one-line intro, poster if you have one. If not, we write it for you.</span></span></div>
+    <div class="step"><div class="n">03</div><b>出刊<small>PUBLISH</small></b><span>每周五统一整理，下周一发出；急事请在标题标注"急"<span class="en-s">Sorted every Friday, out the next Monday. Mark urgent items as urgent.</span></span></div>
+  </div>
+  <div class="notice">📌 <b>提前量 / Lead time：</b>全校消息需要老师审核后发得出去，所以请至少提前 5 个工作日给素材。周五下午送来、要下周一发的，我们真的赶不出来。
+  <span class="en-s">School-wide messages need teacher approval before sending — please give us at least five working days. Friday-afternoon requests for Monday cannot be made to work.</span></div>
+
+  <div class="eyebrow" style="margin-top:26px;"><span class="dot"></span>一个 spotlight 长什么样 / WHAT A SPOTLIGHT LOOKS LIKE</div>
+  <div class="samp-wrap"><span class="samp-tag">示例 · SAMPLE</span><div class="spotlight" id="spotMain"></div></div>
+
+  <div class="honest">
+    <h3>💬 先说清楚我们现在到哪了 / Where we actually are</h3>
+    <p>这个栏目是这学期才开始跑的。固定的每周 spotlight 还在排期，"期末成果特辑"也还没做出来——所以我们没有在这一页写"我们做过多少社团宣传"，因为那样就得编。
+    <span class="en-s">This section started running only this term. The weekly spotlight is still being scheduled and the term-end showcase does not exist yet — so this page does not claim a pile of club work, because claiming it would mean making it up.</span></p>
+    <p>还有一件必须说的：ourvoice 不在学校班级邮件组的可发送名单里，直接给全班群发会被系统退回（2025.06 和 2025.11 都发生过）。所以社团的消息现在主要靠周报、这个网站、以及请老师协助转发——这件事我们在跟学部沟通。
+    <span class="en-s">One more thing we have to say: ourvoice is not on the allowed-senders list for class mailing groups, so direct mass sends bounce back (this happened in June and November 2025). For now club news travels through the digest, this site, and teachers helping forward — we are talking to the division about it.</span></p>
+    <p>能保证的是三件事：来信一定有人回；能发的，一定发；发不出去的，我们会告诉你卡在哪一步。
+    <span class="en-s">Three things we can promise: every message gets a reply; anything that can be sent, we send; if it cannot go out, we tell you exactly where it got stuck.</span></p>
+  </div>
 </section>
 
 <!-- ============ 我要反馈 ============ -->
@@ -524,22 +611,31 @@ const RECEIPTS = [
   {id:"OV-2025-024", when:"2025 春", cat:"设施设备", q:"教学楼设备报修渠道不便", qEn:"No easy way to report broken facilities.", a:"线上报修系统（设施通 App）正式投入使用，报修可追踪。", aEn:"The online reporting system (FONE) went live — repairs are now trackable.", st:"已解决"}
 ];
 
-const CLUBS = [
-  {name:"摄影社", en:"Photography", ico:"📷", one:"拍校园活动、定期出片，正在筹备学期影展。", oneEn:"Covers campus events, publishes regularly, planning a term exhibition.", ach:[["🎞 学期影展筹备中","Term exhibition in the works"],["📸 为 5+ 场校内活动供图","Shot for 5+ school events"],["👥 招新开放","Recruiting"]], tag:true, leader:"G11 · 小A"},
-  {name:"戏剧社", en:"Drama", ico:"🎭", one:"每年一部完整制作——从排练到演出全流程。", oneEn:"One full production every year — rehearsal to stage.", ach:[], tag:false, leader:"G11 · 小B"},
-  {name:"辩论社", en:"Debate", ico:"🗣", one:"打校际赛，有稳定的训练和参赛节奏。", oneEn:"Competes in inter-school tournaments.", ach:[], tag:false, leader:"G12 · 小C"},
-  {name:"机器人社", en:"Robotics", ico:"🤖", one:"备赛 FTC，工程笔记和代码都在持续更新。", oneEn:"Preparing for FTC; engineering log and code kept current.", ach:[], tag:false, leader:"G10 · 小D"},
-  {name:"舞蹈社", en:"Dance", ico:"💃", one:"多舞种，校内演出经验丰富。", oneEn:"Multiple styles, experienced on campus stages.", ach:[], tag:false, leader:"G10 · 小E"},
-  {name:"读书社", en:"Reading", ico:"📚", one:"每两周一次共读，讨论向、无压力。", oneEn:"A low-pressure discussion circle every two weeks.", ach:[], tag:false, leader:"G11 · 小F"}
+const REQUESTS = [
+  {when:"2026.01", name:"毕业典礼原创合唱《风往何处》", nameEn:"Graduation choral piece", want:"请求协助宣传、招募舞台与视频人员，并邀请我们共同创作。", wantEn:"Asked for promo help, stage/video crew recruitment, and co-creation.", act:"已收信归档", actEn:"LOGGED", tone:""},
+  {when:"2025.11", name:"“首届青年投资家”竞赛简讯", nameEn:"Young Investor competition", want:"希望把竞赛简讯群发全校。", wantEn:"Asked us to send a competition brief school-wide.", act:"群发被退回", actEn:"BOUNCED", tone:"soon"},
+  {when:"2025.06", name:"Vocal Club 第二学期汇报演出", nameEn:"Vocal Club showcase", want:"宣传 6 月 25 日的“热成像音乐会”。", wantEn:"Promote their June 25 concert.", act:"群发被退回", actEn:"BOUNCED", tone:"soon"},
+  {when:"2025.06", name:"《来自远方》剧组招募", nameEn:"Come From Away — cast call", want:"招募演员与幕后人员。", wantEn:"Cast and crew recruitment.", act:"群发被退回", actEn:"BOUNCED", tone:"soon"},
+  {when:"2025.06", name:"戏剧社 · 宣传请求", nameEn:"Drama club promo", want:"希望我们帮戏剧社做一轮宣传。", wantEn:"Asked for help promoting the drama club.", act:"已收信归档", actEn:"LOGGED", tone:""},
+  {when:"2025.01", name:"周一晨会开头节目", nameEn:"Assembly opening act", want:"为晨会开场节目找人、做宣传。", wantEn:"Sought performers for the assembly opening.", act:"已收信归档", actEn:"LOGGED", tone:""},
+  {when:"2024.12", name:"申请创立学生社团", nameEn:"Starting a new club", want:"咨询成立社团需要什么条件、怎么申请。", wantEn:"Asked how to start a club and what it takes.", act:"已收信归档", actEn:"LOGGED", tone:""}
 ];
 
+const SERVICES = [
+  {ico:"📰", name:"周报推荐位", en:"Digest slot", desc:"社团活动、招新、组队——进每周校园周报，直接送到全校邮箱。", descEn:"Events, recruitment and team-ups, sent to every school inbox.", tone:"on", mt:"运行中", mtEn:"LIVE"},
+  {ico:"⭐", name:"每周 Spotlight", en:"Weekly spotlight", desc:"一整屏讲一个社团：你们在做什么、下一步是什么、怎么加入。", descEn:"One full screen for one club: what you do, what is next, how to join.", tone:"soon", mt:"排期中", mtEn:"SCHEDULING"},
+  {ico:"🎨", name:"素材代做", en:"Made for you", desc:"文案、海报、短视频。你给内容，我们出成品——不会写也没关系。", descEn:"Copy, posters, short video. You bring content; we make the artefact.", tone:"ask", mt:"按需接单", mtEn:"ON REQUEST"},
+  {ico:"🏆", name:"期末成果特辑", en:"Term showcase", desc:"一学期的社团高光收进一份特辑，给后来的人看，也给你们留一份记录。", descEn:"One term-end collection of club highlights — for the record, and for yours.", tone:"soon", mt:"期末启动", mtEn:"END OF TERM"}
+];
+
+
 const TICKER = [
-  ["✅ 10+ 条反馈已公开回执","10+ feedback items published on the wall"],
-  ["⭐ 本周 spotlight：摄影社","This week: Photography Club"],
+  ["✅ 10+ 条反馈已公开回执","10+ feedback items published"],
   ["📮 新反馈每周五统一处理","New feedback sorted every Friday"],
-  ["📰 周报第 2 期 · 周日发送","Digest #2 — out on Sunday"],
+  ["📰 周报每周日发送","Digest goes out every Sunday"],
+  ["📣 7 封社团来信 · 已归档公示","7 club requests, archived and shown"],
   ["🤝 学生会 × OV：社团展示计划筹备中","SC × OV: club showcase in the works"],
-  ["🗂 社团地图已收录 20+ 社团","20+ clubs on the map"]
+  ["🎨 文案 · 海报 · 短视频，社团按需接单","Copy, posters, video — on request"]
 ];
 
 /* ============ 渲染 ============ */
@@ -596,26 +692,31 @@ function renderHome(){
     '<div class="rec-line"><div class="top"><span class="when">'+r.when+'</span>'+chip(r.st)+'</div>'+
     '<div class="what">'+r.cat+' · '+r.q+'</div><div class="res">'+r.a+'<span class="en-s">'+r.aEn+'</span></div></div>'
   ).join("")||'<div style="color:#8A8177;font-size:13px;">还没有记录——第一个会是你吗？</div>';
-  const s=CLUBS[0];
-  el("homeSpot").innerHTML='<div class="spot-mini"><div class="spot-art">'+s.ico+'</div>'+
-    '<div><div class="who">WEEKLY SPOTLIGHT</div><div class="what">'+s.name+' · '+s.en+'</div>'+
-    '<div class="say">'+s.one+'<span class="en-s">'+s.oneEn+'</span></div></div></div>';
+  const q=REQUESTS[0];
+  el("homeSpot").innerHTML='<div class="spot-mini"><div class="spot-art">📣</div>'+
+    '<div><div class="who">FOR CLUBS · 最近一封社团来信</div><div class="what">'+q.name+'</div>'+
+    '<div class="say">'+q.want+'<span class="en-s">'+q.wantEn+'</span></div></div></div>';
 }
 
-function renderClubs(){
-  const s=CLUBS[0];
-  const ach=(s.ach||[]).map(a=>'<span class="achv">'+a[0]+'<small>'+a[1]+'</small></span>').join("");
-  el("spotMain").innerHTML='<div class="spot-img">'+s.ico+'</div><div class="spot-txt">'+
-    '<div class="lbl">⭐ 本周 SPOTLIGHT — '+s.name+'</div>'+
-    '<h3>'+s.en+' <span class="cn">'+s.name+'</span></h3>'+
-    '<p>'+s.one+'<span class="en-s">'+s.oneEn+'</span></p>'+
-    (ach?'<div class="ach">'+ach+'</div>':'')+'</div>';
-  el("clubGrid").innerHTML=CLUBS.map((c,i)=>'<div class="club">'+
-    (c.tag?'<span class="sticker o">本周 Spotlight<small>THIS WEEK</small></span>':'')+
-    '<div class="ico">'+c.ico+'</div><h4>'+c.name+' <span class="en">'+c.en+'</span></h4>'+
-    '<div class="one">'+c.one+'<span class="en-s">'+c.oneEn+'</span></div>'+
-    '<div class="foot"><span class="who">'+(i===0?"本周 spotlight 主角":"等一个 spotlight")+'<small>'+(i===0?"This week's star":"Waiting for their turn")+'</small></span><span class="who">'+c.leader+'</span></div></div>'
+function renderClubPage(){
+  el("reqList").innerHTML=REQUESTS.map(r=>
+    '<div class="req"><div class="when">'+r.when+'</div>'+
+    '<div class="what"><b>'+r.name+'<small>'+r.nameEn+'</small></b>'+
+    '<span>'+r.want+'<span class="en-s">'+r.wantEn+'</span></span></div>'+
+    '<div class="act '+(r.tone||"")+'">'+r.act+'<small>'+r.actEn+'</small></div></div>'
   ).join("");
+  el("svcGrid").innerHTML=SERVICES.map(x=>
+    '<div class="svc"><span class="ico">'+x.ico+'</span><h4>'+x.name+'<small>'+x.en+'</small></h4>'+
+    '<p>'+x.desc+'<span class="en-s">'+x.descEn+'</span></p>'+
+    '<span class="mt '+x.tone+'">'+x.mt+' · '+x.mtEn+'</span></div>'
+  ).join("");
+  const a=[["📅 6.25 演出","June 25"],["🎼 流行 · 音乐剧 · 摇滚","Pop · Musical · Rock"],["🎹 钢琴独奏 · 合唱","Solo &amp; chorus"],["👥 招新开放","Recruiting"]];
+  el("spotMain").innerHTML='<div class="spot-img">🎤</div><div class="spot-txt">'+
+    '<div class="lbl">⭐ 社团宣传长这样 / WHAT IT LOOKS LIKE</div>'+
+    '<h3>Thermal Image Concert <span class="cn">Vocal Club 热成像音乐会</span></h3>'+
+    '<p>第二学期汇报演出。多种音乐元素：流行、音乐剧、摇滚、钢琴独奏、合唱。家长、老师、同学都欢迎。<span class="en-s">The club\'s second-term showcase — pop, musicals, rock, piano solo and chorus.</span></p>'+
+    '<div class="ach">'+a.map(x=>'<span class="achv">'+x[0]+'<small>'+x[1]+'</small></span>').join("")+'</div>'+
+    '</div>';
 }
 
 function renderTicker(){
@@ -625,7 +726,7 @@ function renderTicker(){
   a.innerHTML=block; b.innerHTML=block;
 }
 
-renderTicker(); renderFilters(); renderReceipts("全部"); renderHome(); renderClubs();
+renderTicker(); renderFilters(); renderReceipts("全部"); renderHome(); renderClubPage();
 </script>
 </body>
 </html>
