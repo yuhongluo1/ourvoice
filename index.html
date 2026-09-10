@@ -481,7 +481,7 @@
   </div>
 
   <div class="eyebrow"><span class="dot"></span>他们来找过我们 / WHO CAME TO US</div>
-  <p class="mini-note">以下全部是真实来信，来自 ourvoice 邮箱存档——只保留社团与项目名，人名已隐去。<span class="en-s">Real requests from the Our Voice inbox archive; club and project names only, personal names removed.</span></p>
+  <p class="mini-note">以下全部是真实来信，来自 ourvoice 邮箱存档——只保留社团与项目名，人名已隐去；标"已群发宣传"的三条，消息发出去了。<span class="en-s">Real requests from the Our Voice inbox archive; club and project names only, personal names removed.</span></p>
   <div class="req-list" id="reqList"></div>
 
   <div class="eyebrow"><span class="dot"></span>我们能给社团什么 / WHAT YOU GET</div>
@@ -501,10 +501,10 @@
 
   <div class="honest">
     <h3>💬 先说清楚我们现在到哪了 / Where we actually are</h3>
-    <p>这个栏目是这学期才开始跑的。固定的每周 spotlight 还在排期，"期末成果特辑"也还没做出来——所以我们没有在这一页写"我们做过多少社团宣传"，因为那样就得编。
-    <span class="en-s">This section started running only this term. The weekly spotlight is still being scheduled and the term-end showcase does not exist yet — so this page does not claim a pile of club work, because claiming it would mean making it up.</span></p>
-    <p>还有一件必须说的：ourvoice 不在学校班级邮件组的可发送名单里，直接给全班群发会被系统退回（2025.06 和 2025.11 都发生过）。所以社团的消息现在主要靠周报、这个网站、以及请老师协助转发——这件事我们在跟学部沟通。
-    <span class="en-s">One more thing we have to say: ourvoice is not on the allowed-senders list for class mailing groups, so direct mass sends bounce back (this happened in June and November 2025). For now club news travels through the digest, this site, and teachers helping forward — we are talking to the division about it.</span></p>
+    <p>这个栏目是这学期才开始跑的，所以我们把"已经有的事实"和"还没有的东西"分开写——这一页不写任何还没发生的事。
+    <span class="en-s">This section started running only this term, so this page keeps facts separate from plans — and claims nothing that has not happened yet.</span></p>
+    <p>做过什么、没做什么，分开讲：上面那 7 条来信都是真的，其中 3 条我们确实把消息发到了全校——Vocal Club 的汇报演出、《来自远方》的选角、"青年投资家"竞赛。还没做的是"每周固定 spotlight"（正在排期）和"期末成果特辑"（还没开始做）。
+    <span class="en-s">What we have and haven't done, kept separate: all seven requests above are real, and for three of them we did send the news school-wide — Vocal Club's concert, the Come From Away cast call, and the Young Investor competition. Not yet done: the fixed weekly spotlight (being scheduled) and the term-end showcase (not started).</span></p>
     <p>能保证的是三件事：来信一定有人回；能发的，一定发；发不出去的，我们会告诉你卡在哪一步。
     <span class="en-s">Three things we can promise: every message gets a reply; anything that can be sent, we send; if it cannot go out, we tell you exactly where it got stuck.</span></p>
   </div>
@@ -613,9 +613,9 @@ const RECEIPTS = [
 
 const REQUESTS = [
   {when:"2026.01", name:"毕业典礼原创合唱《风往何处》", nameEn:"Graduation choral piece", want:"请求协助宣传、招募舞台与视频人员，并邀请我们共同创作。", wantEn:"Asked for promo help, stage/video crew recruitment, and co-creation.", act:"已收信归档", actEn:"LOGGED", tone:""},
-  {when:"2025.11", name:"“首届青年投资家”竞赛简讯", nameEn:"Young Investor competition", want:"希望把竞赛简讯群发全校。", wantEn:"Asked us to send a competition brief school-wide.", act:"群发被退回", actEn:"BOUNCED", tone:"soon"},
-  {when:"2025.06", name:"Vocal Club 第二学期汇报演出", nameEn:"Vocal Club showcase", want:"宣传 6 月 25 日的“热成像音乐会”。", wantEn:"Promote their June 25 concert.", act:"群发被退回", actEn:"BOUNCED", tone:"soon"},
-  {when:"2025.06", name:"《来自远方》剧组招募", nameEn:"Come From Away — cast call", want:"招募演员与幕后人员。", wantEn:"Cast and crew recruitment.", act:"群发被退回", actEn:"BOUNCED", tone:"soon"},
+  {when:"2025.11", name:"“首届青年投资家”竞赛简讯", nameEn:"Young Investor competition", want:"希望把竞赛简讯群发全校。", wantEn:"Asked us to send a competition brief school-wide.", act:"已群发宣传", actEn:"SENT", tone:"on"},
+  {when:"2025.06", name:"Vocal Club 第二学期汇报演出", nameEn:"Vocal Club showcase", want:"宣传 6 月 25 日的“热成像音乐会”。", wantEn:"Promote their June 25 concert.", act:"已群发宣传", actEn:"SENT", tone:"on"},
+  {when:"2025.06", name:"《来自远方》剧组招募", nameEn:"Come From Away — cast call", want:"招募演员与幕后人员。", wantEn:"Cast and crew recruitment.", act:"已群发宣传", actEn:"SENT", tone:"on"},
   {when:"2025.06", name:"戏剧社 · 宣传请求", nameEn:"Drama club promo", want:"希望我们帮戏剧社做一轮宣传。", wantEn:"Asked for help promoting the drama club.", act:"已收信归档", actEn:"LOGGED", tone:""},
   {when:"2025.01", name:"周一晨会开头节目", nameEn:"Assembly opening act", want:"为晨会开场节目找人、做宣传。", wantEn:"Sought performers for the assembly opening.", act:"已收信归档", actEn:"LOGGED", tone:""},
   {when:"2024.12", name:"申请创立学生社团", nameEn:"Starting a new club", want:"咨询成立社团需要什么条件、怎么申请。", wantEn:"Asked how to start a club and what it takes.", act:"已收信归档", actEn:"LOGGED", tone:""}
