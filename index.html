@@ -382,6 +382,7 @@
   .ad .ty.ask{background:#EFEAE2; color:#5A5248;}
   .ad h4{font-size:16.5px; font-weight:900; line-height:1.45;}
   .ad h4 small{display:block; font-size:11px; font-weight:600; color:var(--muted); font-style:italic; font-family:Georgia,serif; margin-top:4px;}
+  .ad .who{font-size:10.5px; font-weight:900; letter-spacing:.06em; color:var(--accent);}
   .ad .meta{font-size:12.5px; line-height:1.7; color:#4A423A; flex:1;}
   .ad .foot{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px 10px; border-top:1.5px dashed var(--line); padding-top:9px; flex-wrap:wrap;}
   .ad .foot .st{margin-left:auto;}
@@ -600,8 +601,8 @@
   </div>
 
   <div class="eyebrow"><span class="dot"></span>一、广告位 / CLUB BOARD</div>
-  <p class="mini-note">每条都来自 OV 邮箱收到的真实来信，人名已隐去。
-  <span class="en-s">Real messages from the Our Voice inbox; personal names removed.</span></p>
+  <p class="mini-note">下面每一条，我们都真的替对方群发过（依 OV 邮箱的发送记录整理，人名已隐去）。
+  <span class="en-s">Every item below was actually sent out by Our Voice — compiled from our own sending records; personal names removed.</span></p>
   <div class="ad-grid" id="adGrid"></div>
 
   <div class="sec-split"><span>二、成果展示 / SHOWCASE</span></div>
@@ -626,8 +627,8 @@
 
   <div class="honest">
     <h3>💬 先说清楚我们现在到哪了 / Where we actually are</h3>
-    <p>两个栏目都是这学期新开的，只登邮件收到的投稿；没有就不补。
-    <span class="en-s">Both sections are new this term; we only post what arrives by email — and we never pad it.</span></p>
+    <p>两个栏目都是新加的：广告位只登我们真的发过的，成果展示只登社团真的投过的。没有就不补。
+    <span class="en-s">Both sections are new: the board only lists what we actually sent, the showcase only what clubs actually submitted. If there is nothing, it stays empty.</span></p>
     <p>来信一定有人回；能登的一定登；登不出去，会告诉你卡在哪一步。
     <span class="en-s">Every message gets a reply; anything we can post, we post; if not, we tell you where it got stuck.</span></p>
   </div>
@@ -714,14 +715,12 @@ const RECEIPTS = [
   {id:"OV-2025-024", when:"2025 春", cat:"设施设备", q:"教学楼设备报修渠道不便", qEn:"No easy way to report broken facilities.", a:"线上报修系统（设施通 App）正式投入使用，报修可追踪。", aEn:"The online reporting system (FONE) went live — repairs are now trackable.", st:"已解决"}
 ];
 
-const NOTICES = [ /* 广告位：全部来自邮件存档的真实来信 */
-  {when:"2026.01", ty:"招募", tyEn:"RECRUIT", tyc:"recruit", name:"2026 毕业典礼原创合唱《风往何处》", nameEn:"Graduation choral piece", want:"招募合唱、舞台与视频人员，并邀请我们共同创作。", wantEn:"Casting chorus, stage and video crew — and inviting us to co-create.", act:"已收信归档", actEn:"LOGGED", tone:""},
-  {when:"2025.11", ty:"通知", tyEn:"NOTICE", tyc:"notice", name:"“首届青年投资家”校内竞赛简讯", nameEn:"Young Investor competition", want:"希望把竞赛简讯发到全校。", wantEn:"Asked us to send a competition brief school-wide.", act:"已群发宣传", actEn:"SENT", tone:"on"},
-  {when:"2025.06", ty:"演出", tyEn:"SHOW", tyc:"show", name:"Vocal Club 第二学期末展演「热成像音乐会」", nameEn:"Vocal Club term showcase", want:"宣传 6 月 25 日的汇报演出：流行、音乐剧、摇滚、钢琴独奏、合唱。", wantEn:"Promoting their June 25 concert — pop, musicals, rock, piano solo, chorus.", act:"已群发宣传", actEn:"SENT", tone:"on"},
-  {when:"2025.06", ty:"招募", tyEn:"RECRUIT", tyc:"recruit", name:"《来自远方》剧组招募", nameEn:"Come From Away — cast call", want:"招募演员与幕后人员。", wantEn:"Casting actors and backstage crew.", act:"已群发宣传", actEn:"SENT", tone:"on"},
-  {when:"2025.06", ty:"宣传", tyEn:"PROMO", tyc:"ask", name:"戏剧社 · 一轮社团宣传", nameEn:"Drama club promo", want:"希望我们帮戏剧社做一轮宣传。", wantEn:"Asked for help promoting the drama club.", act:"已收信归档", actEn:"LOGGED", tone:""},
-  {when:"2025.01", ty:"招募", tyEn:"RECRUIT", tyc:"recruit", name:"周一晨会开场节目", nameEn:"Assembly opening act", want:"为晨会开场节目找人、做宣传。", wantEn:"Finding performers for the assembly opening.", act:"已收信归档", actEn:"LOGGED", tone:""},
-  {when:"2024.12", ty:"咨询", tyEn:"ASK", tyc:"ask", name:"申请创立新社团", nameEn:"Starting a new club", want:"咨询成立社团需要什么条件、怎么申请。", wantEn:"Asking what it takes to start a club.", act:"已收信归档", actEn:"LOGGED", tone:""}
+const NOTICES = [ /* 广告位：以下每一条 OV 都真的群发过（依据邮箱发送记录与退信回执） */
+  {when:"2025.06", ty:"演出", tyEn:"SHOW", tyc:"show", from:"Vocal Club", name:"第二学期末展演「热成像音乐会」", nameEn:"Term showcase — Thermal Image Concert", want:"6 月 25 日演出：流行、音乐剧、摇滚、钢琴独奏、合唱。", wantEn:"A June 25 concert — pop, musicals, rock, piano solo and chorus.", act:"已群发", actEn:"SENT", tone:"on"},
+  {when:"2025.06", ty:"招募", tyEn:"RECRUIT", tyc:"recruit", from:"《来自远方》剧组", name:"剧组招募演员与幕后", nameEn:"Come From Away — cast and crew call", want:"面试 6 月 4 日、6 月 6 日 ASA，下沉教室。", wantEn:"Auditions June 4 and June 6 during ASA, in the sunken classroom.", act:"已群发", actEn:"SENT", tone:"on"},
+  {when:"2025.11", ty:"竞赛", tyEn:"COMPETE", tyc:"notice", from:"创业社", name:"「校内首届青年投资家」模拟投资竞赛", nameEn:"Youth Investor — simulated trading contest", want:"报名 11.18–11.30，12 月比赛；Ainvest 模拟平台，每人 10 万美元虚拟本金，美股。", wantEn:"Sign-up Nov 18–30, contest through December; Ainvest platform, US$100k virtual capital, US stocks.", act:"已群发", actEn:"SENT", tone:"on"},
+  {when:"2026.01", ty:"讲座", tyEn:"TALK", tyc:"ask", from:"11 年级讲座筹备组", name:"亲子沟通讲座：识别心理控制、建立健康互动", nameEn:"Parent–teen talk: spotting control, building healthy dialogue", want:"1 月 22 日周四 P9 · 高中楼报告厅，不用报名，直接来。", wantEn:"Jan 22, Thursday P9, HS Lecture Hall — no sign-up, just come.", act:"已群发", actEn:"SENT", tone:"on"},
+  {when:"2026.06", ty:"志愿", tyEn:"VOLUNTEER", tyc:"recruit", from:"NEST 自然社", name:"「看到鸟撞玻璃了吗？1 分钟帮个忙」", nameEn:"Bird-strike reporting — one minute of help", want:"征集校内鸟撞玻璃的记录，随手报一条就算帮忙。", wantEn:"Recording bird strikes on campus glass; one report is a real help.", act:"已群发", actEn:"SENT", tone:"on"}
 ];
 
 const RESULTS = [ /* 成果展示：比赛荣誉 / 文集杂志 / 项目成果。现在为空——只登邮件收到的投稿 */
@@ -759,7 +758,7 @@ const TICKER = [
   ["✅ 9 条反馈已公开回执","9 feedback items published"],
   ["📮 新反馈每周五统一处理","New feedback sorted every Friday"],
   ["📰 周报每周日发送","Digest goes out every Sunday"],
-  ["📣 7 封社团来信 · 已归档公示","7 club requests, archived and shown"],
+  ["📣 5 条社团广告已群发 · 有记录可查","5 club ads actually sent"],
   ["🏛 Leadership Face-to-Face 论坛 · 2025.12 举办","LFF forum held Dec 2025"],
   ["🎨 文案 · 海报 · 短视频，社团按需接单","Copy, posters, video — on request"]
 ];
@@ -828,6 +827,7 @@ function renderClubPage(){
   el("adGrid").innerHTML=NOTICES.map(n=>
     '<div class="ad"><span class="ty '+n.tyc+'">'+n.ty+' <small style="font-size:8px;letter-spacing:.06em;opacity:.85;">'+n.tyEn+'</small></span>'+
     '<h4>'+n.name+'<small>'+n.nameEn+'</small></h4>'+
+    '<div class="who">来自 '+n.from+'</div>'+
     '<div class="meta">'+n.want+'<span class="en-s">'+n.wantEn+'</span></div>'+
     '<div class="foot"><span class="src">'+n.when+' · 邮件来源 / EMAIL</span>'+
     '<span class="st '+(n.tone||"")+'">'+n.act+' <small style="opacity:.8;">'+n.actEn+'</small></span></div></div>'
