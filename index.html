@@ -41,7 +41,7 @@
   }
   .logo-text{font-weight:800; font-size:16px; line-height:1.2;}
   .logo-text small{display:block; font-weight:500; color:var(--muted); font-size:11px; letter-spacing:.18em;}
-  nav.menu{display:flex; gap:4px; margin-left:auto; flex-wrap:wrap;}
+  nav.menu{display:flex; gap:6px; margin-left:auto; flex-wrap:wrap; row-gap:8px;}
   nav.menu button{
     border:1.5px solid var(--ink); background:transparent; color:var(--ink);
     padding:6px 12px; font-size:14px; font-weight:700; cursor:pointer;
@@ -72,8 +72,8 @@
   .eyebrow .dot{width:8px;height:8px;background:var(--accent);display:inline-block;}
 
   /* 双语副行 */
-  .en-s{display:block; font-size:12px; color:var(--muted); font-weight:500; line-height:1.55; margin-top:3px; letter-spacing:.01em;}
-  .en-s.tiny{font-size:10.5px;}
+  .en-s{display:block; font-size:12px; color:var(--muted); font-weight:500; line-height:1.7; margin-top:6px; letter-spacing:.01em;}
+  .en-s.tiny{font-size:10.5px; line-height:1.65;}
 
   .hero{padding:40px 0 12px; border-bottom:2px solid var(--ink);}
   .hero h1{
@@ -84,11 +84,11 @@
     font-size:clamp(18px,2.6vw,30px); color:var(--accent); letter-spacing:.02em; margin-top:6px;
   }
   .hl{background:linear-gradient(transparent 62%, var(--yellow) 62%, var(--yellow) 92%, transparent 92%);}
-  .hero-sub{margin-top:18px; font-size:16px; color:#4A423A; max-width:700px;}
-  .hero-tags{margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;}
+  .hero-sub{margin-top:18px; font-size:16px; line-height:1.75; color:#4A423A; max-width:700px;}
+  .hero-tags{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;}
   .tag{
     border:1.5px solid var(--ink); background:#fff; font-size:13px; font-weight:700;
-    padding:5px 12px; display:inline-flex; align-items:center; gap:6px; flex-direction:column; line-height:1.25;
+    padding:7px 14px; display:inline-flex; align-items:center; gap:6px; flex-direction:column; line-height:1.4;
   }
   .tag small{font-size:10px; font-weight:600; color:var(--muted); letter-spacing:.03em;}
   .tag.y{background:var(--yellow);}
@@ -107,9 +107,9 @@
   }
   .ticker:hover .ticker-inner{animation-play-state:paused;}
   @keyframes tick{from{transform:translateX(0);} to{transform:translateX(-50%);}}
-  .ticker .it{display:inline-block; margin-right:36px;}
+  .ticker .it{display:inline-block; margin-right:48px;}
   .ticker .it b{color:var(--accent); margin-right:6px;}
-  .ticker .it em{font-style:normal; font-weight:500; color:var(--muted); font-size:12.5px; margin-left:4px;}
+  .ticker .it em{font-style:normal; font-weight:500; color:var(--muted); font-size:12.5px; margin-left:10px;}
 
   .pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin:34px 0 10px;}
   .pillar{
@@ -121,7 +121,7 @@
     font-family:Georgia,serif; font-style:italic; font-weight:700; padding:1px 10px; font-size:14px;
   }
   .pillar h3{font-size:19px; font-weight:800; margin:6px 0 8px;}
-  .pillar p{font-size:14px; color:#4A423A;}
+  .pillar p{font-size:14px; line-height:1.75; color:#4A423A;}
   .pillar .ex{display:inline-block; margin-top:12px; font-size:12px; font-weight:800; border-bottom:2px solid var(--yellow); padding-bottom:1px;}
 
   .evi-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px;}
@@ -142,8 +142,8 @@
   .rec-line .what{font-size:14px; font-weight:700; margin-top:2px;}
   .rec-line .res{font-size:12.5px; color:#4A423A; margin-top:1px;}
   .chip{
-    font-size:10.5px; font-weight:800; padding:1px 8px; border-radius:20px;
-    display:inline-flex; align-items:center; gap:4px; line-height:1.5;
+    font-size:10.5px; font-weight:800; padding:2px 10px; border-radius:20px;
+    display:inline-flex; align-items:center; gap:5px; line-height:1.7;
   }
   .chip small{font-size:8.5px; font-weight:700; opacity:.8; letter-spacing:.04em;}
   .chip.g{background:#DCF2E4; color:var(--green);}
@@ -176,19 +176,19 @@
   .page-head{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:8px;}
   .page-head h2{font-size:clamp(26px,4vw,40px); font-weight:900; line-height:1.1;}
   .page-head h2 small{display:block; font-family:Georgia,serif; font-style:italic; color:var(--accent); font-size:.5em; font-weight:700;}
-  .page-intro{color:#4A423A; font-size:14.5px; max-width:720px; margin:10px 0 22px;}
+  .page-intro{color:#4A423A; font-size:14.5px; line-height:1.8; max-width:720px; margin:12px 0 24px;}
   .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;}
   .filters button{
-    border:1.5px solid var(--ink); background:#fff; padding:5px 12px; cursor:pointer;
-    font-size:13px; font-weight:700; font-family:inherit; line-height:1.25;
+    border:1.5px solid var(--ink); background:#fff; padding:6px 13px; cursor:pointer;
+    font-size:13px; font-weight:700; font-family:inherit; line-height:1.45;
   }
-  .filters button small{display:block; font-size:9.5px; font-weight:600; color:var(--muted); letter-spacing:.04em;}
+  .filters button small{display:block; font-size:9.5px; font-weight:600; color:var(--muted); letter-spacing:.04em; margin-top:1px;}
   .filters button:hover{transform:translate(-1px,-1px); box-shadow:2px 2px 0 var(--ink);}
   .filters button.on{background:var(--ink); color:var(--paper);}
   .filters button.on small{color:var(--yellow);}
 
   .rc-stats{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;}
-  .st-box{border:1.5px solid var(--ink); background:#fff; padding:5px 12px; font-size:12.5px; font-weight:700; display:flex; align-items:center; gap:7px; line-height:1.2;}
+  .st-box{border:1.5px solid var(--ink); background:#fff; padding:6px 13px; font-size:12.5px; font-weight:700; display:flex; align-items:center; gap:8px; line-height:1.5;}
   .st-box small{font-size:9px; font-weight:600; color:var(--muted); letter-spacing:.05em;}
   .st-box b{font-size:16px; font-family:Georgia,serif;}
   .st-dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
@@ -204,17 +204,17 @@
   .rc-bar{width:8px; flex:none;}
   .rc-main{flex:1; padding:14px 18px 14px; min-width:0;}
   .rc-top{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
-  .rc-cat{font-size:11px; font-weight:800; background:var(--paper); border:1px solid var(--line); padding:2px 8px; color:#5A5248; line-height:1.3;}
-  .rc-cat small{display:block; font-size:8.5px; font-weight:600; color:var(--muted); letter-spacing:.05em;}
+  .rc-cat{font-size:11px; font-weight:800; background:var(--paper); border:1px solid var(--line); padding:3px 11px; color:#5A5248; line-height:1.55;}
+  .rc-cat small{display:block; font-size:9px; font-weight:600; color:var(--muted); letter-spacing:.04em; margin-top:1px;}
   .rc-when{font-size:11px; color:var(--muted); font-weight:600;}
   .rc-id{font-family:Georgia,serif; font-style:italic; font-weight:700; color:var(--muted); font-size:11.5px;}
   .rc-chip{margin-left:auto; font-size:11px; font-weight:900; padding:3px 10px; letter-spacing:.05em; text-align:center; line-height:1.25;}
   .rc-chip small{display:block; font-size:8px; font-weight:800; letter-spacing:.08em; opacity:.8;}
   .rc-q{margin:12px 0 0; padding-left:12px; border-left:3px solid var(--line);}
-  .rc-a{margin:8px 0 0 12px; padding:8px 12px; background:#F5F0E5; border:1px dashed var(--line); font-size:13.5px; color:#3E3730;}
+  .rc-a{margin:10px 0 0 12px; padding:10px 14px; background:#F5F0E5; border:1px dashed var(--line); font-size:13.5px; line-height:1.7; color:#3E3730;}
   .rc-q .lbl, .rc-a .lbl{display:flex; align-items:baseline; gap:8px; font-size:10px; font-weight:900; letter-spacing:.18em; color:var(--muted); margin-bottom:1px;}
   .rc-q .lbl small, .rc-a .lbl small{font-size:8.5px; letter-spacing:.06em; font-weight:600; opacity:.85;}
-  .rc-q .txt{font-size:15.5px; font-weight:800; line-height:1.45;}
+  .rc-q .txt{font-size:15.5px; font-weight:800; line-height:1.55;}
   .rc-q .txt .en-s, .rc-a .en-s{font-size:12px; font-weight:500;}
   .empty{text-align:center; color:var(--muted); padding:50px 0; font-size:15px;}
 
@@ -258,28 +258,28 @@
   .sticker small{display:block; font-size:8px; font-weight:800; letter-spacing:.06em; opacity:.8;}
   .sticker.o{background:var(--accent); color:#fff;}
 
-  .fb-cols{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:18px 0 30px;}
+  .fb-cols{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0 34px;}
   @media(max-width:760px){.fb-cols{grid-template-columns:1fr;}}
-  .fb-card{border:2px solid var(--ink); background:#fff; padding:24px 22px; position:relative;}
+  .fb-card{border:2px solid var(--ink); background:#fff; padding:26px 22px;}
   .fb-card.soon{border-style:dashed; background:transparent; box-shadow:none;}
   .fb-card h3{font-size:20px; font-weight:900; margin-bottom:6px;}
   .fb-card .mail{
     display:inline-block; background:var(--yellow); font-weight:800; font-size:15px;
     padding:6px 14px; border:1.5px solid var(--ink); margin:10px 0; box-shadow:2px 2px 0 var(--ink);
   }
-  .fb-card p{font-size:13.5px; color:#4A423A;}
-  .fb-card ul{font-size:13.5px; color:#4A423A; padding-left:18px; margin-top:8px;}
-  .fb-card ul li{margin-bottom:6px;}
+  .fb-card p{font-size:13.5px; line-height:1.75; color:#4A423A;}
+  .fb-card ul{font-size:13.5px; line-height:1.7; color:#4A423A; padding-left:18px; margin-top:10px;}
+  .fb-card ul li{margin-bottom:9px;}
   .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:20px 0 8px;}
   @media(max-width:760px){.steps{grid-template-columns:1fr;}}
   .step{border-top:3px solid var(--ink); padding-top:12px;}
   .step .n{font-family:Georgia,serif; font-style:italic; font-weight:900; color:var(--accent); font-size:26px; line-height:1;}
   .step b{display:block; font-size:15px; margin:4px 0 4px;}
-  .step b small{font-size:10px; font-weight:700; color:var(--muted); letter-spacing:.06em;}
-  .step span{font-size:13px; color:#4A423A;}
+  .step b small{font-size:10px; font-weight:700; color:var(--muted); letter-spacing:.06em; margin-left:8px;}
+  .step span{font-size:13px; line-height:1.75; color:#4A423A;}
   .step .en-s{font-size:11.5px;}
   .notice{
-    border:1.5px dashed var(--muted); padding:14px 16px; font-size:13px; color:#4A423A;
+    border:1.5px dashed var(--muted); padding:16px 18px; font-size:13px; line-height:1.75; color:#4A423A;
     background:#fff; margin-top:24px;
   }
   .notice b{color:var(--ink);}
@@ -288,7 +288,7 @@
   @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
   .about-grid h3{font-size:18px; font-weight:900; margin:22px 0 8px; display:flex; align-items:center; gap:8px;}
   .about-grid h3:first-child{margin-top:0;}
-  .about-grid p{font-size:14.5px; color:#3E3730;}
+  .about-grid p{font-size:14.5px; line-height:1.8; color:#3E3730;}
   .about-grid p.en-s{font-size:12px; margin:-4px 0 0;}
   .about-grid .lead{font-size:17px; font-weight:600;}
   .rel-box{border:2px solid var(--ink); background:#fff; padding:18px; margin-top:14px;}
@@ -296,7 +296,7 @@
   .rel-box .pair{display:flex; gap:12px; padding:8px 0; border-bottom:1.5px dashed var(--line); align-items:baseline;}
   .rel-box .pair:last-child{border-bottom:none;}
   .rel-box .pair .who{flex:none; font-weight:900; font-size:13px;}
-  .rel-box .pair .desc{font-size:13.5px;}
+  .rel-box .pair .desc{font-size:13.5px; line-height:1.6;}
   .rel-box .pair .desc small{display:block; font-size:10.5px; color:var(--muted); font-weight:500;}
   .rel-box .who.sc{color:var(--blue);}
   .rel-box .who.ov{color:var(--accent);}
@@ -331,7 +331,7 @@
     font-weight:900; font-size:14px; padding:10px 20px; cursor:pointer; font-family:inherit;
   }
   .mp-bar button:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
-  .mini-note{font-size:12.5px; color:var(--muted); margin:-4px 0 14px;}
+  .mini-note{font-size:12.5px; line-height:1.75; color:var(--muted); margin:-2px 0 16px;}
   .req-list{border:2px solid var(--ink); background:#fff; margin-bottom:32px;}
   .req{display:grid; grid-template-columns:86px 1fr auto; gap:14px; align-items:start;
        padding:13px 16px; border-bottom:1.5px dashed var(--line);}
@@ -370,6 +370,73 @@
   .honest p{font-size:14px; color:#3E3730;}
   .honest p+p{margin-top:9px;}
   .honest .en-s{display:block; font-size:12px; margin-top:2px;}
+
+  /* ---- 社团页 v2：广告位 / 成果展示 / 我们主办 ---- */
+  .ad-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(252px,1fr)); gap:14px; margin-bottom:30px;}
+  .ad{border:2px solid var(--ink); background:#fff; padding:14px 16px; display:flex; flex-direction:column; gap:6px;}
+  .ad:hover{transform:translate(-2px,-2px); box-shadow:4px 4px 0 rgba(26,21,18,.9);}
+  .ad .ty{font-size:10.5px; font-weight:900; letter-spacing:.08em; padding:3px 11px; line-height:1.55; align-self:flex-start; border:1.5px solid var(--ink);}
+  .ad .ty.show{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .ad .ty.recruit{background:#E2E9FA; color:var(--blue); border-color:var(--blue);}
+  .ad .ty.notice{background:#FBEBCB; color:#8a6400; border-color:#B7791F;}
+  .ad .ty.ask{background:#EFEAE2; color:#5A5248;}
+  .ad h4{font-size:16.5px; font-weight:900; line-height:1.45;}
+  .ad h4 small{display:block; font-size:11px; font-weight:600; color:var(--muted); font-style:italic; font-family:Georgia,serif; margin-top:4px;}
+  .ad .meta{font-size:12.5px; line-height:1.7; color:#4A423A; flex:1;}
+  .ad .foot{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px 10px; border-top:1.5px dashed var(--line); padding-top:9px; flex-wrap:wrap;}
+  .ad .foot .st{margin-left:auto;}
+  .ad .src{font-size:10px; font-weight:800; letter-spacing:.08em; color:var(--muted);}
+  .ad .st{font-size:10.5px; font-weight:900; padding:2px 9px; line-height:1.5; border:1.5px solid var(--ink); background:var(--paper); color:#5A5248;}
+  .ad .st.on{background:#DCF2E4; color:#0E7A4A; border-color:#0E7A4A;}
+  .empty-card{border:2px dashed var(--line); background:#fff; padding:28px 22px; text-align:center; margin-bottom:30px;}
+  .empty-card b{font-size:16px; font-weight:900; display:block;}
+  .empty-card p{font-size:13.5px; color:#4A423A; max-width:560px; margin:6px auto 12px;}
+  .empty-card button{border:2px solid var(--ink); background:var(--ink); color:var(--yellow); font-weight:900; font-size:13.5px; padding:9px 20px; cursor:pointer; font-family:inherit;}
+  .empty-card button:hover{background:var(--accent); color:#fff;}
+  .lff{border:2px solid var(--ink); background:var(--ink); color:var(--paper); padding:24px 24px 20px; box-shadow:6px 6px 0 var(--accent);}
+  .lff .lbl{color:var(--yellow); font-weight:900; letter-spacing:.2em; font-size:11.5px;}
+  .lff h3{font-size:clamp(20px,3vw,26px); font-weight:900; margin:6px 0 0;}
+  .lff h3 .cn{color:var(--accent);}
+  .lff p{color:#D6CCBE; font-size:13.5px; line-height:1.75; margin-top:12px; max-width:720px;}
+  .lff .facts{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;}
+  .lff .fact{border:1px solid var(--paper); padding:6px 13px; font-size:12.5px; font-weight:800; text-align:center; line-height:1.45;}
+  .lff .fact small{display:block; font-size:8.5px; font-weight:700; color:#B7AA99; letter-spacing:.06em; margin-top:2px;}
+  .qa-list{border:2px solid var(--ink); background:#fff; margin-bottom:14px;}
+  .qa{padding:15px 18px; border-bottom:1.5px dashed var(--line);}
+  .qa:last-child{border-bottom:none;}
+  .qa .lbl{font-size:9.5px; font-weight:900; letter-spacing:.18em; color:var(--muted); display:block;}
+  .qa .q{font-size:15px; font-weight:800; line-height:1.55; margin-top:2px;}
+  .qa .q .en-s{font-size:12px; font-weight:500;}
+  .qa .a{font-size:13.5px; line-height:1.75; color:#3E3730; margin-top:8px; padding-left:13px; border-left:3px solid var(--line);}
+  .qa .a .en-s{font-size:12px;}
+
+  /* ---- 分区：导航分组 / 区块条 / 首页 section 卡 ---- */
+  nav.menu .nav-grp{display:flex; align-items:center; gap:6px; border-left:2px solid var(--ink); padding-left:12px; margin-left:7px;}
+  nav.menu .nav-grp .gl{display:flex; flex-direction:column; line-height:1.05; font-size:11.5px; font-weight:900; letter-spacing:.04em; padding-right:7px;}
+  nav.menu .nav-grp .gl small{font-size:7.5px; font-weight:700; letter-spacing:.1em; color:var(--muted);}
+  @media(max-width:600px){ nav.menu{gap:8px;} nav.menu button{padding:5px 10px; font-size:13px;} #m-home{display:none;} .nav-grp{border-left-width:2px;} }
+  .sec-band{display:flex; align-items:center; gap:12px; flex-wrap:wrap; border:2px solid var(--ink); padding:10px 15px; margin:0 0 20px; font-weight:900; font-size:13.5px; letter-spacing:.03em; line-height:1.5;}
+  .sec-band small{font-size:9.5px; font-weight:800; letter-spacing:.12em; margin-left:9px;}
+  .sec-band .sp{margin-left:auto; font-size:11px; font-weight:700; line-height:1.5; color:#4A423A;}
+  .sec-band.feedback{background:#E2E9FA; border-color:var(--blue); color:var(--blue);}
+  .sec-band.feedback small{color:#5B7FC7;}
+  .sec-band.clubs{background:#FFE9DE; border-color:var(--accent); color:var(--accent);}
+  .sec-band.clubs small{color:#C05A2B;}
+  .sec-band.byus{background:var(--ink); border-color:var(--ink); color:var(--yellow);}
+  .sec-band.byus small{color:#C9BEB0;}
+  .sec-band.byus .sp{color:#C9BEB0;}
+  .sec-split{border-top:2px solid var(--ink); margin:34px 0 24px; position:relative;}
+  .sec-split span{position:absolute; top:-11px; left:0; background:var(--paper); padding-right:12px; font-size:11px; font-weight:900; letter-spacing:.2em; color:var(--muted);}
+  .pillar .plinks{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;}
+  .pillar .plinks button{border:1.5px solid var(--ink); background:#fff; color:var(--ink); font-weight:800; font-size:12.5px; padding:5px 12px; cursor:pointer; font-family:inherit;}
+  .pillar .plinks button:hover{transform:translate(-1px,-1px); box-shadow:2px 2px 0 var(--ink);}
+  .byus-band{margin-top:18px; border:2px solid var(--ink); background:var(--ink); color:var(--paper); padding:18px 20px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; box-shadow:6px 6px 0 var(--accent);}
+  .byus-band .bl{color:var(--yellow); font-weight:900; letter-spacing:.16em; font-size:11px;}
+  .byus-band b{display:block; font-size:19px; font-weight:900; margin:4px 0 2px;}
+  .byus-band span{color:#D6CCBE; font-size:13.5px;}
+  .byus-band span .en-s{color:#9E9181;}
+  .byus-band button{margin-left:auto; border:none; background:var(--yellow); color:var(--ink); font-weight:900; font-size:14px; padding:10px 20px; cursor:pointer; font-family:inherit; box-shadow:3px 3px 0 #fff;}
+  .byus-band button:hover{background:var(--accent); color:#fff;}
 </style>
 </head>
 <body>
@@ -384,9 +451,14 @@
     </div>
     <nav class="menu">
       <button id="m-home" class="on" onclick="go('home')">首页<small>Home</small></button>
-      <button id="m-receipts" onclick="go('receipts')">回执墙<small>Receipts</small></button>
-      <button id="m-clubs" onclick="go('clubs')">社团合作<small>For clubs</small></button>
-      <button id="m-feedback" onclick="go('feedback')">我要反馈<small>Feedback</small></button>
+      <div class="nav-grp"><span class="gl">反馈<small>FEEDBACK</small></span>
+        <button id="m-receipts" onclick="go('receipts')">回执墙<small>Receipts</small></button>
+        <button id="m-feedback" onclick="go('feedback')">我要反馈<small>Speak up</small></button>
+      </div>
+      <div class="nav-grp"><span class="gl">社团<small>CLUBS</small></span>
+        <button id="m-clubs" onclick="go('clubs')">社团合作<small>For clubs</small></button>
+      </div>
+      <button id="m-lff" onclick="go('lff')">我们主办<small>By us</small></button>
       <button id="m-about" onclick="go('about')">关于 OV<small>About</small></button>
     </nav>
     <button class="cta-pill" onclick="go('feedback')">📮 说点什么<small>Say something</small></button>
@@ -397,13 +469,13 @@
 <section class="page on" id="view-home">
   <div class="hero">
     <h1>让校园里值得被看见的，<span class="hl">被看见</span><span class="en">Make what deserves to be seen, seen.</span></h1>
-    <p class="hero-sub">Our Voice 是一个由学生自己发起、自己运营的组织——一半是校园"广告公司"（帮社团、活动与成果做传播），一半是独立反馈渠道（把你的声音带到学校，并把结果公开给你）。
-    <span class="en-s">Our Voice is a student-run organization — part campus "ad agency" (telling the stories of clubs, events and achievements), part independent feedback channel (bringing your voice to the school and publishing what happens next).</span></p>
+    <p class="hero-sub">学生自己发起、自己运营。两条线：<b>反馈</b>（把声音带到学校，结果公开）和<b>社团</b>（登广告、留成果）；另外，Leadership Face-to-Face 论坛是我们主办的。
+    <span class="en-s">Student-run. Two lines: <b>Feedback</b> (your voice goes to the school, outcomes are public) and <b>Clubs</b> (ads up, achievements on record) — plus the Leadership Face-to-Face forum we run ourselves.</span></p>
     <div class="hero-tags">
       <span class="tag">📬 学生反馈 · 公开回执<small>Feedback · Public receipts</small></span>
       <span class="tag y">📰 每周校园周报<small>Weekly digest</small></span>
-      <span class="tag o">⭐ 社团 spotlight<small>Club spotlight</small></span>
-      <span class="tag g">📣 社团合作 · 帮你被看见<small>For clubs</small></span>
+      <span class="tag o">📣 社团广告位<small>Club board</small></span>
+      <span class="tag g">🏆 成果展示<small>Showcase</small></span>
     </div>
   </div>
 
@@ -414,23 +486,33 @@
 
   <div class="pillars">
     <div class="pillar"><span class="num">01</span>
-      <h3>📬 声音 Voice</h3>
-      <p>把同学们的真实想法带到学校面前，并持续跟进。每一条反馈都有去向，结果公开在回执墙。
-      <span class="en-s">We bring students' real opinions to the school and keep following up. Every piece of feedback has a trail; outcomes are published on the Receipt Wall.</span></p>
-      <span class="ex">不问，就没人替你问<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">No one will ask for you — unless you do.</small></span>
+      <h3>📬 反馈 Feedback</h3>
+      <p>把真实想法带到学校，并持续跟进。每条反馈都有去向，结果公开在回执墙。
+      <span class="en-s">Real opinions, taken to the school and followed up. Every item has a trail; outcomes are public.</span></p>
+      <div class="plinks">
+        <button onclick="go('receipts')">回执墙 · Receipts</button>
+        <button onclick="go('feedback')">我要反馈 · Speak up</button>
+      </div>
     </div>
     <div class="pillar"><span class="num">02</span>
-      <h3>📰 信息 Info</h3>
-      <p>每周校园周报：社团消息、找人组队、本周亮点——让消息找到人，也让人找到人。
-      <span class="en-s">A weekly digest: club news, team-ups, highlights — helping information find people, and people find people.</span></p>
-      <span class="ex">不办活动 · 让活动找到人<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">We do not run events — we help events find people.</small></span>
+      <h3>📣 社团 Clubs</h3>
+      <p>登广告（招新、演出、通知），存成果（比赛、文集、项目）。
+      <span class="en-s">Club ads (recruitment, shows, notices) and a record of achievements (awards, publications, projects).</span></p>
+      <div class="plinks">
+        <button onclick="go('clubs')">广告位 · Club board</button>
+        <button onclick="go('clubs')">成果展示 · Showcase</button>
+      </div>
     </div>
-    <div class="pillar"><span class="num">03</span>
-      <h3>📣 传播 Megaphone</h3>
-      <p>社团负责把事情办出来，我们负责让全校知道。每周一个 spotlight、期末一份成果特辑——栏目这学期刚起步，正在排期，先来先排。
-      <span class="en-s">Clubs make things happen; we make sure the school hears about it. A weekly spotlight and a term-end showcase — the section just started this term; slots are being scheduled, first come first served.</span></p>
-      <span class="ex">活动会散场 · 成果留下来<small style="display:block;font-weight:600;color:var(--muted);font-size:10.5px;">Events end; achievements remain.</small></span>
+  </div>
+
+  <div class="byus-band">
+    <div>
+      <div class="bl">🏛 我们主办 / RUN BY OUR VOICE</div>
+      <b>Leadership Face-to-Face 论坛</b>
+      <span>学生和校领导面对面，会后问题按部门跟进——回复已公开。
+      <span class="en-s">Students met school leaders face to face; every question got a written reply.</span></span>
     </div>
+    <button onclick="go('lff')">看这一场 →</button>
   </div>
 
   <div class="evi-row">
@@ -447,7 +529,7 @@
   <div class="band">
     <div>
       <h2>有一件事想说？<small>Something on your mind?</small></h2>
-      <p>课程、食堂、作息、设备……大小事都算。告诉我们，我们带去学校，再把结果公开给你——全程看得见。</p>
+      <p>课程、食堂、作息、设备……大小事都算。告诉我们，我们带去学校，结果公开。</p>
     </div>
     <button onclick="go('feedback')">去反馈 →<small>Give feedback</small></button>
   </div>
@@ -458,56 +540,13 @@
   <div class="page-head">
     <h2>回执墙<small>THE RECEIPT WALL</small></h2>
   </div>
-  <p class="page-intro">每一条反馈的处理结果都会公开在这里：收到了什么 → 带去了哪里 → 结果如何。你说了什么，后来怎么样了，都看得见。人名与细节已隐去。
-  <span class="en-s">Every outcome is published here: what we received → where we took it → what happened. What you said, and what came of it — all visible. Names and details removed.</span></p>
+  <div class="sec-band feedback">📬 反馈 FEEDBACK <small>SECTION 01</small><span class="sp">把你说的带到学校 · 结果公开</span></div>
+  <p class="page-intro">收到什么 → 带去给谁 → 结果如何，全部公开。人名与细节已隐去。
+  <span class="en-s">Received → taken where → what happened. All published; names and details removed.</span></p>
   <div class="filters" id="filters"></div>
   <div class="rc-stats" id="rcStats"></div>
   <div id="receiptList"></div>
   <p class="empty" id="receiptEmpty" style="display:none;">这个分类暂时没有记录——也许下一个就是你的。<br><span class="en-s" style="display:inline-block;">Nothing here yet — maybe yours will be next.</span></p>
-</section>
-
-<!-- ============ 社团合作 ============ -->
-<section class="page" id="view-clubs">
-  <div class="page-head">
-    <h2>社团合作<small>FOR CLUBS</small></h2>
-  </div>
-  <p class="page-intro">我们不是社团的评委，是社团的喇叭。你们埋头做事，我们负责让全校听见。
-  <span class="en-s">We are not the judges of your club — we are your megaphone. You do the work; we make sure the school hears it.</span></p>
-
-  <div class="mp-bar">
-    <span class="mp-ico">📣</span>
-    <div><b>你们办，我们喊。</b><span class="en-s">You make it happen. We make it heard.</span></div>
-    <button onclick="go('feedback')">投稿合作 →</button>
-  </div>
-
-  <div class="eyebrow"><span class="dot"></span>他们来找过我们 / WHO CAME TO US</div>
-  <p class="mini-note">以下全部是真实来信，来自 ourvoice 邮箱存档——只保留社团与项目名，人名已隐去；标"已群发宣传"的三条，消息发出去了。<span class="en-s">Real requests from the Our Voice inbox archive; club and project names only, personal names removed.</span></p>
-  <div class="req-list" id="reqList"></div>
-
-  <div class="eyebrow"><span class="dot"></span>我们能给社团什么 / WHAT YOU GET</div>
-  <div class="svc-grid" id="svcGrid"></div>
-
-  <div class="eyebrow"><span class="dot"></span>怎么把东西交给我们 / HOW TO SEND IT</div>
-  <div class="steps">
-    <div class="step"><div class="n">01</div><b>写信<small>SEND</small></b><span>标题写【社团宣传】+ 社团名，发到 ourvoice@hd.kaiwenacademy<span class="en-s">Subject line: [Club promo] + your club's name.</span></span></div>
-    <div class="step"><div class="n">02</div><b>给料<small>MATERIAL</small></b><span>时间、地点、一句话介绍，有海报就附上——没有也行，我们帮你写<span class="en-s">Time, place, one-line intro, poster if you have one. If not, we write it for you.</span></span></div>
-    <div class="step"><div class="n">03</div><b>出刊<small>PUBLISH</small></b><span>每周五统一整理，下周一发出；急事请在标题标注"急"<span class="en-s">Sorted every Friday, out the next Monday. Mark urgent items as urgent.</span></span></div>
-  </div>
-  <div class="notice">📌 <b>提前量 / Lead time：</b>全校消息需要老师审核后发得出去，所以请至少提前 5 个工作日给素材。周五下午送来、要下周一发的，我们真的赶不出来。
-  <span class="en-s">School-wide messages need teacher approval before sending — please give us at least five working days. Friday-afternoon requests for Monday cannot be made to work.</span></div>
-
-  <div class="eyebrow" style="margin-top:26px;"><span class="dot"></span>一个 spotlight 长什么样 / WHAT A SPOTLIGHT LOOKS LIKE</div>
-  <div class="samp-wrap"><span class="samp-tag">示例 · SAMPLE</span><div class="spotlight" id="spotMain"></div></div>
-
-  <div class="honest">
-    <h3>💬 先说清楚我们现在到哪了 / Where we actually are</h3>
-    <p>这个栏目是这学期才开始跑的，所以我们把"已经有的事实"和"还没有的东西"分开写——这一页不写任何还没发生的事。
-    <span class="en-s">This section started running only this term, so this page keeps facts separate from plans — and claims nothing that has not happened yet.</span></p>
-    <p>做过什么、没做什么，分开讲：上面那 7 条来信都是真的，其中 3 条我们确实把消息发到了全校——Vocal Club 的汇报演出、《来自远方》的选角、"青年投资家"竞赛。还没做的是"每周固定 spotlight"（正在排期）和"期末成果特辑"（还没开始做）。
-    <span class="en-s">What we have and haven't done, kept separate: all seven requests above are real, and for three of them we did send the news school-wide — Vocal Club's concert, the Come From Away cast call, and the Young Investor competition. Not yet done: the fixed weekly spotlight (being scheduled) and the term-end showcase (not started).</span></p>
-    <p>能保证的是三件事：来信一定有人回；能发的，一定发；发不出去的，我们会告诉你卡在哪一步。
-    <span class="en-s">Three things we can promise: every message gets a reply; anything that can be sent, we send; if it cannot go out, we tell you exactly where it got stuck.</span></p>
-  </div>
 </section>
 
 <!-- ============ 我要反馈 ============ -->
@@ -515,33 +554,98 @@
   <div class="page-head">
     <h2>我要反馈<small>SPEAK UP</small></h2>
   </div>
+  <div class="sec-band feedback">📬 反馈 FEEDBACK <small>SECTION 01</small><span class="sp">提交入口 · 每周五统一整理</span></div>
   <div class="fb-cols">
     <div class="fb-card">
-      <span class="tag" style="position:absolute;top:-12px;left:14px;">当前可用<small>Available now</small></span>
+      <span class="tag" style="margin-bottom:16px;">当前可用<small>Available now</small></span>
       <h3>📮 发邮件给我们<small style="display:block;font-size:12px;color:var(--muted);font-weight:600;">Email us</small></h3>
       <span class="mail">ourvoice@hd.kaiwenacademy</span>
-      <p>把想说的写进邮件。我们每周统一整理、带去学校，结果写进回执墙。
-      <span class="en-s">Write to us. We sort everything weekly, take it to the school, and publish the outcome on the Receipt Wall.</span></p>
+      <p>写邮件给我们。每周统一整理、带去学校，结果写进回执墙。
+      <span class="en-s">Email us. We sort weekly, take it to the school, publish the outcome.</span></p>
       <ul>
         <li>大小事都算：课程、食堂、作息、设备、社团……<br><span class="en-s tiny" style="font-size:11px;">Big or small: classes, dining, schedules, facilities, clubs.</span></li>
-        <li>涉及具体个人时，我们会先征求你的同意再公开<span class="en-s tiny" style="font-size:11px;">If it involves a specific person, we ask before publishing.</span></li>
+        <li>涉及具体个人的，先征求同意再公开<span class="en-s tiny" style="font-size:11px;">If it names someone, we ask them first.</span></li>
       </ul>
     </div>
     <div class="fb-card soon">
-      <span class="tag n" style="position:absolute;top:-12px;left:14px;">建设中<small>Coming soon</small></span>
+      <span class="tag n" style="margin-bottom:16px;">建设中<small>Coming soon</small></span>
       <h3>🔒 匿名渠道<small style="display:block;font-size:12px;color:var(--muted);font-weight:600;">Anonymous channel</small></h3>
-      <p style="margin-top:8px;">我们正在寻找更好的匿名提建议的方式（目前邮件渠道非匿名，发件人可见）。确定之后会第一时间在这里公布——<b>不想露面的朋友，可以先等等我们。</b>
-      <span class="en-s">We are working on a better, anonymous way to submit feedback (email is not anonymous — senders are visible). When it is ready, we will announce it here. If you prefer to stay anonymous, please wait for us.</span></p>
+      <p style="margin-top:10px;">邮件渠道不是匿名的（发件人可见）。更好的匿名方式定了会在这里公布——<b>不想露面的，先等我们一下。</b>
+      <span class="en-s">Email is not anonymous — senders are visible. A better anonymous channel will be announced here.</span></p>
     </div>
   </div>
   <div class="eyebrow" style="margin-bottom:2px;"><span class="dot"></span>提交之后会发生什么 / WHAT HAPPENS NEXT</div>
   <div class="steps">
-    <div class="step"><div class="n">01</div><b>收到<small>RECEIVED</small></b><span>你的反馈进入台账，每周统一整理分类<span class="en-s">Logged and sorted weekly.</span></span></div>
-    <div class="step"><div class="n">02</div><b>带去<small>BROUGHT</small></b><span>共性问题统一反映给学校相关部门，持续跟进<span class="en-s">Common issues raised with the school, tracked.</span></span></div>
-    <div class="step"><div class="n">03</div><b>回执<small>RECEIPT</small></b><span>结果公开在回执墙，无结果就写"仍在沟通"——不装死<span class="en-s">Outcomes published; if nothing yet, we say so honestly.</span></span></div>
+    <div class="step"><div class="n">01</div><b>收到<small>RECEIVED</small></b><span>每周统一录入台账<span class="en-s">Logged weekly.</span></span></div>
+    <div class="step"><div class="n">02</div><b>带去<small>BROUGHT</small></b><span>共性问题统一反映给相关部门，持续跟进<span class="en-s">Raised with the school, tracked.</span></span></div>
+    <div class="step"><div class="n">03</div><b>回执<small>RECEIPT</small></b><span>结果公开在回执墙；没有结果就写"仍在沟通"<span class="en-s">Published; if nothing yet, we say so.</span></span></div>
   </div>
-  <div class="notice">📌 <b>承诺 / Our promise：</b>我们不会假装解决。学校没回复就是没回复，我们会如实写"仍在沟通"，直到有下文。
-  <span class="en-s">We will not fake a resolution. If the school has not replied, we write exactly that — until there is news.</span></div>
+  <div class="notice">📌 <b>承诺 / Our promise：</b>不假装解决。学校没回复，就写"仍在沟通"，直到有下文。
+  <span class="en-s">We never fake a resolution. If the school has not replied, we say exactly that.</span></div>
+</section>
+
+<!-- ============ 社团合作 ============ -->
+<section class="page" id="view-clubs">
+  <div class="page-head">
+    <h2>社团合作<small>FOR CLUBS</small></h2>
+  </div>
+  <div class="sec-band clubs">📣 社团 CLUBS <small>SECTION 02</small><span class="sp">活动由社团和学生会办 · 我们负责让全校看见</span></div>
+  <p class="page-intro">两件事：登广告（招新、演出、通知），存成果（比赛、文集、项目）。你给什么，我们登什么。
+  <span class="en-s">Two jobs: club ads (recruitment, shows, notices) and a record of club achievements (awards, publications, projects). What you send is what we post.</span></p>
+
+  <div class="mp-bar">
+    <span class="mp-ico">📣</span>
+    <div><b>你们办，我们登。</b><span class="en-s">You make it happen. We make it public.</span></div>
+    <button onclick="go('feedback')">投稿合作 →</button>
+  </div>
+
+  <div class="eyebrow"><span class="dot"></span>一、广告位 / CLUB BOARD</div>
+  <p class="mini-note">每条都来自 OV 邮箱收到的真实来信，人名已隐去。
+  <span class="en-s">Real messages from the Our Voice inbox; personal names removed.</span></p>
+  <div class="ad-grid" id="adGrid"></div>
+
+  <div class="sec-split"><span>二、成果展示 / SHOWCASE</span></div>
+  <p class="mini-note">社团投稿，我们留档，不撤下。
+  <span class="en-s">Submitted by clubs; kept on record.</span></p>
+  <div class="empty-card" id="resEmpty" style="display:none;">
+    <b>这一栏现在还空着 / Nothing here yet</b>
+    <p>还没有成果投稿。比赛、荣誉、文集、杂志、项目都收——第一条可以是你的。
+    <span class="en-s">No submissions yet. Competitions, awards, anthologies, magazines, projects — all welcome. The first entry could be yours.</span></p>
+    <button onclick="go('feedback')">📮 投稿成果</button>
+  </div>
+  <div class="ad-grid" id="resGrid"></div>
+
+  <div class="eyebrow" style="margin-top:26px;"><span class="dot"></span>怎么投稿 / HOW TO SEND IT</div>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><b>写信<small>SEND</small></b><span>标题写【广告位】或【成果展示】+ 社团名，发到 ourvoice@hd.kaiwenacademy<span class="en-s">Subject: [Club board] or [Showcase] + your club name.</span></span></div>
+    <div class="step"><div class="n">02</div><b>给料<small>MATERIAL</small></b><span>时间、地点、一句话；成果类附比赛名称与成绩。没有海报也行<span class="en-s">Time, place, one line; for results the competition and placing. Poster optional.</span></span></div>
+    <div class="step"><div class="n">03</div><b>上页<small>PUBLISH</small></b><span>每周五整理，下周一更新；急事标题标"急"<span class="en-s">Sorted Friday, updated Monday. Mark urgent items "urgent".</span></span></div>
+  </div>
+  <div class="notice">📌 <b>提前量 / Lead time：</b>全校群发需老师审核，请提前 5 个工作日；网站和广告位随时可登。
+  <span class="en-s">School-wide sends need teacher approval — five working days ahead. This page: any time.</span></div>
+
+  <div class="honest">
+    <h3>💬 先说清楚我们现在到哪了 / Where we actually are</h3>
+    <p>两个栏目都是这学期新开的，只登邮件收到的投稿；没有就不补。
+    <span class="en-s">Both sections are new this term; we only post what arrives by email — and we never pad it.</span></p>
+    <p>来信一定有人回；能登的一定登；登不出去，会告诉你卡在哪一步。
+    <span class="en-s">Every message gets a reply; anything we can post, we post; if not, we tell you where it got stuck.</span></p>
+  </div>
+</section>
+
+<!-- ============ 我们主办 ============ -->
+<section class="page" id="view-lff">
+  <div class="page-head">
+    <h2>我们主办<small>RUN BY OUR VOICE</small></h2>
+  </div>
+  <div class="sec-band byus">🏛 Leadership Face-to-Face <small>OUR OWN EVENT</small><span class="sp">OV 自己策划 · 自己跟进</span></div>
+  <p class="page-intro">这场论坛由 OV 自己策划：学生提问，我们整理，学校逐条书面回复。
+  <span class="en-s">Designed and run by Our Voice: students asked, we sorted the questions, the school replied in writing.</span></p>
+  <div class="lff" id="lffBox"></div>
+  <div class="steps" id="lffSteps" style="margin-top:16px;"></div>
+  <div class="qa-list" id="qaList" style="margin-top:20px;"></div>
+  <div class="notice">📌 <b>来源 / Source：</b>问答摘自 2025.12 学校部门的书面回复，未改结论。相关条目也在<a href="#" onclick="go('receipts');return false;" style="color:var(--accent);font-weight:700;">回执墙 / the Receipt Wall</a>。
+  <span class="en-s">Excerpts from the departments' written replies, December 2025. Related items also appear on the Receipt Wall.</span></div>
 </section>
 
 <!-- ============ 关于 ============ -->
@@ -551,28 +655,28 @@
   </div>
   <div class="about-grid">
     <div>
-      <p class="lead">一个由学生自己发起、自己运营的组织。你可以把我们理解成校园里的"广告公司"——但我们服务的客户，是整个学生社区。
-      <span class="en-s">A student-run organization. Think of us as the campus "ad agency" — except our client is the whole student community.</span></p>
+      <p class="lead">学生自己发起、自己运营。可以理解成校园里的"广告公司"——客户是整个学生社区。
+      <span class="en-s">Student-run. Think of us as the campus "ad agency" — our client is the whole student community.</span></p>
       <h3>🎯 我们做什么 / What we do</h3>
-      <p>不办活动（那是学生会和社团的事）。我们做三件事：把学生的声音带到学校并公开结果（反馈线）；让社团、活动与成果被全校看见（传播线）；让消息找到人、人找到人（连接）。
-      <span class="en-s">We do not run events (that is for the Student Council and clubs). We do three things: bring student voices to the school and publish outcomes (feedback); make clubs, events and achievements visible school-wide (media); help information find people, and people find people (connection).</span></p>
+      <p>活动由社团和学生会办；我们做传播和记录。自己主办的只有一场：Leadership Face-to-Face 论坛。
+      <span class="en-s">Clubs and the Student Council run events; we do publicity and records. The one event we run ourselves is the Leadership Face-to-Face forum.</span></p>
       <h3>🏛 和学生会的关系 / Student Council</h3>
-      <p>学生会是策展方——他们办活动、给资源；我们是做传播的——让活动找到人、让成果被记住。两件事不重叠，经常合作。
-      <span class="en-s">The Student Council curates — they run events and provide resources. We spread the word — helping events find people and achievements get remembered. No overlap; frequent collaboration.</span></p>
+      <p>学生会办活动、给资源；我们做传播，让活动找到人、让成果被记住。经常合作。
+      <span class="en-s">The Student Council runs events and provides resources; we spread the word. Frequent collaborators.</span></p>
       <h3>🕰 我们做过什么 / Our record</h3>
-      <p>办过 Leadership Face-to-Face 论坛（2025.12，学生直接对话校领导）、组织过全校性问题汇总反馈，也推动了一批切实的校园改变——从教室投影、报告厅座椅，到卫生间改造与无障碍卫生间重新开放。全部记录在<a href="#" onclick="go('receipts');return false;" style="color:var(--accent);font-weight:700;">回执墙 / the Receipt Wall</a>。
-      <span class="en-s">We ran the Leadership Face-to-Face Forum (Dec 2025 — students face-to-face with school leaders), organized school-wide issue reports, and helped push real campus changes: from projectors and lecture-hall seats to restroom renovations and the reopening of the accessible restroom. All recorded on the Receipt Wall.</span></p>
+      <p>主办过 Leadership Face-to-Face 论坛（2025.12），推动过一批校园改变：投影仪、报告厅座椅、卫生间改造、无障碍卫生间重新开放。全部记在<a href="#" onclick="go('receipts');return false;" style="color:var(--accent);font-weight:700;">回执墙 / the Receipt Wall</a>。
+      <span class="en-s">We ran the Leadership Face-to-Face forum (Dec 2025) and helped push real campus changes: projectors, lecture-hall seats, restroom renovations, the accessible restroom reopening. All on the Receipt Wall.</span></p>
     </div>
     <div>
       <div class="rel-box">
         <div class="rt">一张图看懂分工 / WHO DOES WHAT</div>
         <div class="pair"><span class="who sc">SC</span><span class="desc">策展：办活动 · 给资源 · 提供展示机会<small>Curates: events, resources, showcase opportunities</small></span></div>
-        <div class="pair"><span class="who ov">OV</span><span class="desc">传播：周报 · spotlight · 成果特辑 · 回执<small>Spreads the word: digest, spotlight, showcase, receipts</small></span></div>
+        <div class="pair"><span class="who ov">OV</span><span class="desc">传播：周报 · 广告位 · 成果展示 · 回执<small>Digest, club board, showcase, receipts</small></span></div>
       </div>
       <div class="join-box">
         <h3>想加入我们？<br><span style="font-size:15px;font-style:italic;font-family:Georgia,serif;">Want to join?</span></h3>
-        <p>不需要经验，会听别人说话就够了。尤其欢迎 G9 / G10——OV 的未来是你们的。
-        <span class="en-s">No experience needed — if you can listen, that is enough. G9 and G10 especially welcome: the future of OV is yours.</span></p>
+        <p>不需要经验，会听别人说话就够了。尤其欢迎 G9 / G10。
+        <span class="en-s">No experience needed — if you can listen, that is enough. G9 and G10 especially welcome.</span></p>
         <button onclick="go('feedback')">📮 发邮件说"我想加入"<small>Email us to join</small></button>
       </div>
     </div>
@@ -610,15 +714,38 @@ const RECEIPTS = [
   {id:"OV-2025-024", when:"2025 春", cat:"设施设备", q:"教学楼设备报修渠道不便", qEn:"No easy way to report broken facilities.", a:"线上报修系统（设施通 App）正式投入使用，报修可追踪。", aEn:"The online reporting system (FONE) went live — repairs are now trackable.", st:"已解决"}
 ];
 
-const REQUESTS = [
-  {when:"2026.01", name:"毕业典礼原创合唱《风往何处》", nameEn:"Graduation choral piece", want:"请求协助宣传、招募舞台与视频人员，并邀请我们共同创作。", wantEn:"Asked for promo help, stage/video crew recruitment, and co-creation.", act:"已收信归档", actEn:"LOGGED", tone:""},
-  {when:"2025.11", name:"“首届青年投资家”竞赛简讯", nameEn:"Young Investor competition", want:"希望把竞赛简讯群发全校。", wantEn:"Asked us to send a competition brief school-wide.", act:"已群发宣传", actEn:"SENT", tone:"on"},
-  {when:"2025.06", name:"Vocal Club 第二学期汇报演出", nameEn:"Vocal Club showcase", want:"宣传 6 月 25 日的“热成像音乐会”。", wantEn:"Promote their June 25 concert.", act:"已群发宣传", actEn:"SENT", tone:"on"},
-  {when:"2025.06", name:"《来自远方》剧组招募", nameEn:"Come From Away — cast call", want:"招募演员与幕后人员。", wantEn:"Cast and crew recruitment.", act:"已群发宣传", actEn:"SENT", tone:"on"},
-  {when:"2025.06", name:"戏剧社 · 宣传请求", nameEn:"Drama club promo", want:"希望我们帮戏剧社做一轮宣传。", wantEn:"Asked for help promoting the drama club.", act:"已收信归档", actEn:"LOGGED", tone:""},
-  {when:"2025.01", name:"周一晨会开头节目", nameEn:"Assembly opening act", want:"为晨会开场节目找人、做宣传。", wantEn:"Sought performers for the assembly opening.", act:"已收信归档", actEn:"LOGGED", tone:""},
-  {when:"2024.12", name:"申请创立学生社团", nameEn:"Starting a new club", want:"咨询成立社团需要什么条件、怎么申请。", wantEn:"Asked how to start a club and what it takes.", act:"已收信归档", actEn:"LOGGED", tone:""}
+const NOTICES = [ /* 广告位：全部来自邮件存档的真实来信 */
+  {when:"2026.01", ty:"招募", tyEn:"RECRUIT", tyc:"recruit", name:"2026 毕业典礼原创合唱《风往何处》", nameEn:"Graduation choral piece", want:"招募合唱、舞台与视频人员，并邀请我们共同创作。", wantEn:"Casting chorus, stage and video crew — and inviting us to co-create.", act:"已收信归档", actEn:"LOGGED", tone:""},
+  {when:"2025.11", ty:"通知", tyEn:"NOTICE", tyc:"notice", name:"“首届青年投资家”校内竞赛简讯", nameEn:"Young Investor competition", want:"希望把竞赛简讯发到全校。", wantEn:"Asked us to send a competition brief school-wide.", act:"已群发宣传", actEn:"SENT", tone:"on"},
+  {when:"2025.06", ty:"演出", tyEn:"SHOW", tyc:"show", name:"Vocal Club 第二学期末展演「热成像音乐会」", nameEn:"Vocal Club term showcase", want:"宣传 6 月 25 日的汇报演出：流行、音乐剧、摇滚、钢琴独奏、合唱。", wantEn:"Promoting their June 25 concert — pop, musicals, rock, piano solo, chorus.", act:"已群发宣传", actEn:"SENT", tone:"on"},
+  {when:"2025.06", ty:"招募", tyEn:"RECRUIT", tyc:"recruit", name:"《来自远方》剧组招募", nameEn:"Come From Away — cast call", want:"招募演员与幕后人员。", wantEn:"Casting actors and backstage crew.", act:"已群发宣传", actEn:"SENT", tone:"on"},
+  {when:"2025.06", ty:"宣传", tyEn:"PROMO", tyc:"ask", name:"戏剧社 · 一轮社团宣传", nameEn:"Drama club promo", want:"希望我们帮戏剧社做一轮宣传。", wantEn:"Asked for help promoting the drama club.", act:"已收信归档", actEn:"LOGGED", tone:""},
+  {when:"2025.01", ty:"招募", tyEn:"RECRUIT", tyc:"recruit", name:"周一晨会开场节目", nameEn:"Assembly opening act", want:"为晨会开场节目找人、做宣传。", wantEn:"Finding performers for the assembly opening.", act:"已收信归档", actEn:"LOGGED", tone:""},
+  {when:"2024.12", ty:"咨询", tyEn:"ASK", tyc:"ask", name:"申请创立新社团", nameEn:"Starting a new club", want:"咨询成立社团需要什么条件、怎么申请。", wantEn:"Asking what it takes to start a club.", act:"已收信归档", actEn:"LOGGED", tone:""}
 ];
+
+const RESULTS = [ /* 成果展示：比赛荣誉 / 文集杂志 / 项目成果。现在为空——只登邮件收到的投稿 */
+];
+
+const LFF = { /* 我们主办的活动：Leadership Face-to-Face Forum */
+  facts:[["2025.12.1","DATE"],["H202","ROOM"],["45 分钟","LENGTH"],["高中部学生 × 校领导","WHO"]],
+  lead:"把学生和校领导放进同一个房间，把问题交给能回答的人，然后要回书面回复。",
+  leadEn:"Students and leaders in one room; questions handed to the people who could answer them; written replies secured.",
+  steps:[
+    {n:"01", b:"提案", bEn:"PROPOSE", t:"2025.10 我们写信给校领导，提议办一场 45 分钟的面对面论坛。", tEn:"Oct 2025 — we proposed a 45-minute face-to-face forum to the school leadership."},
+    {n:"02", b:"成行", bEn:"HOLD", t:"2025.12.1 · H202 · 学生当面提问，校领导现场回答。", tEn:"Dec 1, 2025 · H202 · students asked in person; leaders answered on the spot."},
+    {n:"03", b:"闭环", bEn:"FOLLOW UP", t:"会后按部门整理成清单，发给 IT、后勤与学部；12 月 9 日前全部收到书面答复。", tEn:"Sorted by department and sent to IT, Operations and the division — all answered in writing by Dec 9."}
+  ],
+  qa:[
+    {q:"宿舍浴室供暖偏冷", qEn:"Dorm showers felt cold", a:"工程师傅测温后暖气运行正常（37.5–39.6℃），偏低主要与开窗通风散失热量有关；已建议宿管把控冬季通风时段，并评估给浴室加装热风幕机。", aEn:"Engineers measured the radiators at 37.5–39.6°C — within range; heat was lost through open windows, so ventilation hours will be managed and a hot-air curtain is under evaluation."},
+    {q:"图书馆冬天冷", qEn:"The library felt cold in winter", a:"实测图书馆约 24℃，达到供暖标准；一层玻璃门常开时近门区域会降到 18℃ 左右——进出随手关门，学校会持续关注。", aEn:"Measured around 24°C, within standard; the area near the ground-floor glass doors drops to about 18°C when left open — close them behind you."},
+    {q:"宿舍热水器、自习室插座、洗衣机报修慢", qEn:"Slow repairs in dorms", a:"宿舍属生活区，工程人员需宿管陪同才能检查，过去是报修后才处理；正在与宿管协商建立定期巡检机制。", aEn:"Dorm areas need a supervisor to accompany engineers, so repairs used to wait for a report; a regular inspection routine is being arranged."},
+    {q:"咖啡吧刷脸支付识别不稳", qEn:"Face-pay at the café was unreliable", a:"建议上传近期实拍人像照（别用证件照或艺术照、别遮挡面部）；识别失败时先更新照片再试。", aEn:"Upload a recent, unobstructed photo (not an ID or studio shot); if recognition fails, update the photo and try again."},
+    {q:"教学楼与图书馆网络不稳", qEn:"Patchy Wi-Fi on campus", a:"IT 会检测是角落覆盖问题还是整体偏弱、是否与硬件或特定网站有关，并做优化；手机信号属运营商范围，需致电 10086 反馈。", aEn:"IT will test whether it is corner coverage, hardware or specific sites, and improve it; mobile reception is a carrier issue — report it to 10086."},
+    {q:"体育馆二层闷热", qEn:"Gym 2F felt stuffy", a:"空调运行正常，室温 26–28℃ 符合夏季设计参数；钢结构层高大、蓄热强，需提前连续运行数小时才有明显降温。", aEn:"The AC works and 26–28°C matches the summer design range; the steel structure holds heat, so it must run for hours in advance to make a difference."},
+    {q:"体育馆一层卫生间异味", qEn:"Smell in the gym restroom", a:"已更换大功率换气扇、封堵 4 个不常用地漏、加强保洁频次并及时补水封。", aEn:"A higher-power exhaust fan was installed, four rarely used floor drains were sealed, and cleaning frequency increased."}
+  ]
+};
 
 const SERVICES = [
   {ico:"📰", name:"周报推荐位", en:"Digest slot", desc:"社团活动、招新、组队——进每周校园周报，直接送到全校邮箱。", descEn:"Events, recruitment and team-ups, sent to every school inbox.", tone:"on", mt:"运行中", mtEn:"LIVE"},
@@ -633,7 +760,7 @@ const TICKER = [
   ["📮 新反馈每周五统一处理","New feedback sorted every Friday"],
   ["📰 周报每周日发送","Digest goes out every Sunday"],
   ["📣 7 封社团来信 · 已归档公示","7 club requests, archived and shown"],
-  ["🤝 学生会 × OV：社团展示计划筹备中","SC × OV: club showcase in the works"],
+  ["🏛 Leadership Face-to-Face 论坛 · 2025.12 举办","LFF forum held Dec 2025"],
   ["🎨 文案 · 海报 · 短视频，社团按需接单","Copy, posters, video — on request"]
 ];
 
@@ -691,31 +818,41 @@ function renderHome(){
     '<div class="rec-line"><div class="top"><span class="when">'+r.when+'</span>'+chip(r.st)+'</div>'+
     '<div class="what">'+r.cat+' · '+r.q+'</div><div class="res">'+r.a+'<span class="en-s">'+r.aEn+'</span></div></div>'
   ).join("")||'<div style="color:#8A8177;font-size:13px;">还没有记录——第一个会是你吗？</div>';
-  const q=REQUESTS[0];
+  const q=NOTICES[0];
   el("homeSpot").innerHTML='<div class="spot-mini"><div class="spot-art">📣</div>'+
-    '<div><div class="who">FOR CLUBS · 最近一封社团来信</div><div class="what">'+q.name+'</div>'+
+    '<div><div class="who">FOR CLUBS · 最新一条广告位</div><div class="what">'+q.name+'</div>'+
     '<div class="say">'+q.want+'<span class="en-s">'+q.wantEn+'</span></div></div></div>';
 }
 
 function renderClubPage(){
-  el("reqList").innerHTML=REQUESTS.map(r=>
-    '<div class="req"><div class="when">'+r.when+'</div>'+
-    '<div class="what"><b>'+r.name+'<small>'+r.nameEn+'</small></b>'+
-    '<span>'+r.want+'<span class="en-s">'+r.wantEn+'</span></span></div>'+
-    '<div class="act '+(r.tone||"")+'">'+r.act+'<small>'+r.actEn+'</small></div></div>'
+  el("adGrid").innerHTML=NOTICES.map(n=>
+    '<div class="ad"><span class="ty '+n.tyc+'">'+n.ty+' <small style="font-size:8px;letter-spacing:.06em;opacity:.85;">'+n.tyEn+'</small></span>'+
+    '<h4>'+n.name+'<small>'+n.nameEn+'</small></h4>'+
+    '<div class="meta">'+n.want+'<span class="en-s">'+n.wantEn+'</span></div>'+
+    '<div class="foot"><span class="src">'+n.when+' · 邮件来源 / EMAIL</span>'+
+    '<span class="st '+(n.tone||"")+'">'+n.act+' <small style="opacity:.8;">'+n.actEn+'</small></span></div></div>'
   ).join("");
-  el("svcGrid").innerHTML=SERVICES.map(x=>
-    '<div class="svc"><span class="ico">'+x.ico+'</span><h4>'+x.name+'<small>'+x.en+'</small></h4>'+
-    '<p>'+x.desc+'<span class="en-s">'+x.descEn+'</span></p>'+
-    '<span class="mt '+x.tone+'">'+x.mt+' · '+x.mtEn+'</span></div>'
+  el("resEmpty").style.display=RESULTS.length?"none":"block";
+  el("resGrid").innerHTML=RESULTS.map(r=>
+    '<div class="ad"><span class="ty notice">'+r.ty+'</span>'+
+    '<h4>'+r.name+'<small>'+(r.nameEn||"")+'</small></h4>'+
+    '<div class="meta">'+r.detail+'<span class="en-s">'+(r.detailEn||"")+'</span></div>'+
+    '<div class="foot"><span class="src">'+r.when+' · 邮件来源 / EMAIL</span></div></div>'
   ).join("");
-  const a=[["📅 6.25 演出","June 25"],["🎼 流行 · 音乐剧 · 摇滚","Pop · Musical · Rock"],["🎹 钢琴独奏 · 合唱","Solo &amp; chorus"],["👥 招新开放","Recruiting"]];
-  el("spotMain").innerHTML='<div class="spot-img">🎤</div><div class="spot-txt">'+
-    '<div class="lbl">⭐ 社团宣传长这样 / WHAT IT LOOKS LIKE</div>'+
-    '<h3>Thermal Image Concert <span class="cn">Vocal Club 热成像音乐会</span></h3>'+
-    '<p>第二学期汇报演出。多种音乐元素：流行、音乐剧、摇滚、钢琴独奏、合唱。家长、老师、同学都欢迎。<span class="en-s">The club\'s second-term showcase — pop, musicals, rock, piano solo and chorus.</span></p>'+
-    '<div class="ach">'+a.map(x=>'<span class="achv">'+x[0]+'<small>'+x[1]+'</small></span>').join("")+'</div>'+
-    '</div>';
+}
+
+function renderLFFPage(){
+  el("lffBox").innerHTML='<div class="lbl">LEADERSHIP FACE-TO-FACE FORUM</div>'+
+    '<h3>学生 × 校领导 <span class="cn">面对面论坛</span></h3>'+
+    '<p>'+LFF.lead+'<span class="en-s">'+LFF.leadEn+'</span></p>'+
+    '<div class="facts">'+LFF.facts.map(f=>'<span class="fact">'+f[0]+'<small>'+f[1]+'</small></span>').join("")+'</div>';
+  el("lffSteps").innerHTML=LFF.steps.map(x=>
+    '<div class="step"><div class="n">'+x.n+'</div><b>'+x.b+'<small>'+x.bEn+'</small></b><span>'+x.t+'<span class="en-s">'+x.tEn+'</span></span></div>'
+  ).join("");
+  el("qaList").innerHTML='<div class="rc-q" style="margin:0; padding:12px 16px 0; border-left:none;"><span class="lbl">论坛之后 · 学生问 / 学校答 <small>AFTER THE FORUM · ASKED &amp; ANSWERED</small></span></div>'+
+    LFF.qa.map(x=>'<div class="qa"><span class="lbl">提问 QUESTION</span>'+
+    '<div class="q">'+x.q+'<span class="en-s">'+x.qEn+'</span></div>'+
+    '<div class="a">'+x.a+'<span class="en-s">'+x.aEn+'</span></div></div>').join("");
 }
 
 function renderTicker(){
@@ -725,7 +862,7 @@ function renderTicker(){
   a.innerHTML=block; b.innerHTML=block;
 }
 
-renderTicker(); renderFilters(); renderReceipts("全部"); renderHome(); renderClubPage();
+renderTicker(); renderFilters(); renderReceipts("全部"); renderHome(); renderClubPage(); renderLFFPage();
 </script>
 </body>
 </html>
